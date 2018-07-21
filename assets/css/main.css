@@ -1,0 +1,159 @@
+div#containerNav {
+  width: 80%;
+}
+/* Imagen de fondo en la primera sección */
+.bg-full {
+  background-image: url(../imgs/bg_starwars.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  margin-top: 1px;
+  width: 100%;
+}
+h1, h2 , h3{
+  color: #F19C00;
+  font-family: 'Anton', sans-serif;
+  margin: 0px;
+}
+h2 {
+  font-size: 28px;
+  padding-top: 10px;
+}
+/* Estilo del título dentro de contenedor de la imagen background */
+.bg-full > h1 {
+  font-size: 23px;
+  line-height: 44px;
+  padding: 30px;
+}
+.bg-full h1::before {
+  content: '\201C';
+}
+.bg-full h1::after {
+  content: '\201D';
+}
+/* Estilos del botón CONTÁCTAME en la imagen background */
+.bg-full > button {
+  margin-top: 5%;
+  margin-left: 25%;
+  width: 50%;
+}
+.bg-full i.left {
+  margin-right: 3px;
+}
+/* Menú lateral */
+.sidenav-overlay {
+  background-color: transparent;
+}
+/* Texto acerca de mí */
+div#aboutMe {
+  margin-top: 5%;
+}
+p {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 17px;
+  line-height: 30px;
+}
+/* Foto de perfil */
+img#photo_profile {
+  margin-left: 15%;
+  width: 70%;
+}
+/* Contenedor de los servicios que ofrezco */
+div#container_services {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: auto;
+}
+.service {
+  margin-top: 8%;
+}
+.service h3 {
+  font-size: 22px;
+  text-align: center;
+}
+.service h3, .service p, .service a {
+  color: #fff;
+}
+.service p {
+  font-size: 20px;
+  text-align: center;
+}
+img.imgService {
+  margin-left: 25%;
+  width: 50%;
+}
+#container_portafolio h2 {
+  margin-bottom: 15px;
+}
+div.imgProject {
+  margin-bottom: 5%;
+}
+/* Estilos para el pié de página */
+footer.page-footer { padding-bottom: 2px; }
+footer ul {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+/* Media query estilos en tablets */
+@media (min-width: 601px) {
+  /* Estilos de la frase principal */
+  .bg-full > h1 {
+    font-size: 35px;
+    padding-top: 50px;
+    text-align: left;
+  }
+  /* Estilo del botón CONTÁCTAME */
+  .bg-full > button {
+    margin-left: 5%;
+    width: 30%;
+  }
+  /* Estilos del parrafo de sobre mí */
+  p { 
+    font-size: 22px;
+    line-height: 35px;
+  }
+  /* Margen superior de cada servicio */
+  .service {
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+}
+
+/* Media query estilos para desktops */
+@media (min-width: 993px) {
+  /* Estilo del botón CONTÁCTAME */
+  .bg-full > button {
+    margin-top: 1%;
+    margin-left: 3%;
+    width: 12%;
+  }
+  /* Estilos para la foto de perfil */
+  img#photo_profile {
+    margin-left: 0%;
+    width: 100%;
+  }
+  /* Contenedor Sobre mí */
+  div#aboutMe { margin-top: 3%; }
+  /* Estilos título de nivel 2 */
+  h2 { font-size: 32px; }
+  /* Margin superior título de servicios */
+  div#container_services h2 { margin-top: 1%; }
+  /* Margen superior de cada servicio */
+  .service { margin-top: 2%; }
+  /* Estilos para las imágenes de servicios */
+  img.imgService {
+    height: 121.59px;
+    margin-left: 33.5%;
+    width: 33%;
+  }
+  /* Estilos para los títulos de servicio */
+  .service h3 {
+    font-size: 25px;
+    margin-top: 5%;
+  }
+  /* Margen inferior para el título de Portafolio */
+  #container_portafolio h2 { margin-bottom: 4%; }
+}
