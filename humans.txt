@@ -1,0 +1,14 @@
+/* TEAM */
+  Programmer: Aarón López Sosa
+  Site: aaronlopezsosa.com.mx
+  Contact: aaronlopezsosa [at] gmail.com
+  Twitter: @als_link
+  From: Villahermosa, Tabasco, Mexico
+
+/* SITE */
+  Last update: 2018/07/21
+  Language: Spanish
+  Doctype: HTML5
+  Standards: HTML5, CSS3
+  Components: Materializecss, Font Awesome, Google Fonts
+  IDE: Visual Studio Code
