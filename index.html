@@ -33,24 +33,24 @@
           <a href="index.html" class="brand-logo">Aarón</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="active"><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
-            <li><a href="#!"><i class="material-icons left">person</i>Sobre mí</a></li>
-            <li><a href="#!"><i class="material-icons left">business_center</i>Servicios</a></li>
-            <li><a href="#!"><i class="material-icons left">folder</i>Portafolio</a></li>
-            <li><a href="#!"><i class="material-icons left">email</i>Contáctame</a></li>
+            <li class="active"><a href="#firstSection" class="goTo"><i class="material-icons left">home</i>Inicio</a></li>
+            <li><a href="#aboutMe" class="goTo"><i class="material-icons left">person</i>Sobre mí</a></li>
+            <li><a href="#container_services" class="goTo"><i class="material-icons left">business_center</i>Servicios</a></li>
+            <li><a href="#container_portafolio" class="goTo"><i class="material-icons left">folder</i>Portafolio</a></li>
+            <li><a href="#formContact" class="goTo"><i class="material-icons left">email</i>Contáctame</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-      <li class="active"><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
-      <li><a href="#!"><i class="material-icons left">person</i>Sobre mí</a></li>
-      <li><a href="#!"><i class="material-icons left">business_center</i>Servicios</a></li>
-      <li><a href="#!"><i class="material-icons left">folder</i>Portafolio</a></li>
-      <li><a href="#!"><i class="material-icons left">email</i>Contáctame</a></li>
+      <li class="active"><a href="#firstSection" class="goTo sidenav-close"><i class="material-icons left">home</i>Inicio</a></li>
+      <li><a href="#aboutMe" class="goTo sidenav-close"><i class="material-icons left">person</i>Sobre mí</a></li>
+      <li><a href="#container_services" class="goTo sidenav-close"><i class="material-icons left">business_center</i>Servicios</a></li>
+      <li><a href="#container_portafolio" class="goTo sidenav-close"><i class="material-icons left">folder</i>Portafolio</a></li>
+      <li><a href="#formContact" class="goTo sidenav-close"><i class="material-icons left">email</i>Contáctame</a></li>
     </ul>
 
-    <div class="bg-full">
+    <div id="firstSection" class="bg-full">
       <h1 class="center-align">No lo intentes. Hazlo, o no lo hagas, pero no lo intentes (Yoda - Star Wars)</h1>
       <button type="button" class="btn waves-effect waves-light modal-trigger">
         <i class="material-icons left">local_post_office</i>Contáctame
@@ -184,12 +184,26 @@
     <!-- Jquery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Materializecss js -->
-    <script src="asssets/js/materialize.min.js"></script>
+    <script src="assets/js/materialize.min.js"></script>
     <script>
       $(document).ready(function() {
         $('.sidenav').sidenav();
         $('.modal').modal();
         $('.materialboxed').materialbox();
+
+        // Scroll To
+        $('.goTo').click(function(event) {
+          if (this.hash !== "") {
+            console.log(this.hash);
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 4000, function(){
+              window.location.hash = hash;
+            });
+          }
+        }); 
       });
     </script>
             
