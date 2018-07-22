@@ -33,7 +33,7 @@ h2 {
   content: '\201D';
 }
 /* Estilos del botón CONTÁCTAME en la imagen background */
-.bg-full > button {
+.bg-full > a {
   margin-top: 5%;
   margin-left: 25%;
   width: 50%;
@@ -106,7 +106,7 @@ footer ul {
     text-align: left;
   }
   /* Estilo del botón CONTÁCTAME */
-  .bg-full > button {
+  .bg-full > a {
     margin-left: 5%;
     width: 30%;
   }
@@ -125,7 +125,7 @@ footer ul {
 /* Media query estilos para desktops */
 @media (min-width: 993px) {
   /* Estilo del botón CONTÁCTAME */
-  .bg-full > button {
+  .bg-full > a {
     margin-top: 1%;
     margin-left: 3%;
     width: 12%;

@@ -50,9 +50,9 @@
 
     <div id="firstSection" class="bg-full">
       <h1 class="center-align">No lo intentes. Hazlo, o no lo hagas, pero no lo intentes (Yoda - Star Wars)</h1>
-      <button type="button" class="btn waves-effect waves-light modal-trigger">
+      <a href="#formContact" class="btn waves-effect waves-light goTo">
         <i class="material-icons left">local_post_office</i>Contáctame
-      </button>
+      </a>
     </div>
 
     <!-- Contenido principal -->
@@ -63,8 +63,20 @@
         </div>
         <div class="col s12 m12 l8">
           <h2 class="center-align">Sobre mí</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam repellendus dolorem rem magnam recusandae ea ducimus expedita, quae ad itaque, harum molestiae minus ratione quo obcaecati eaque aliquid eveniet quidem.</p>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam repellendus dolorem rem magnam recusandae ea ducimus expedita, quae ad itaque, harum molestiae minus ratione quo obcaecati eaque aliquid eveniet quidem.</p>
+          <p>Amante de las tecnologías y de la buena música. Me dedico al desarrollo de software a la medida.
+            Entusiasta del desarrollo móvil usando <a href="https://ionicframework.com/" target="_blank">ionic framework.</a>
+            Participo en las comunidades de tecnología y emprendimiento 
+            <a href="https://www.facebook.com/groups/hacktabasco/" target="_blank">Hack Tabasco</a>,
+            <a href="https://www.facebook.com/gdgvillahermosa/" target="_blank">GDG Villahermosa</a>,
+            <a href="https://www.facebook.com/CodeandoVillahermosa/" target="_blank">Codeando Villahermosa</a>,
+            <a href="https://www.facebook.com/swvhsa/" target="_blank">Startup Weekend Villahermosa.</a>
+          </p>
+          <p>En mis tiempos libres participo como mentor tech impartiendo talleres en 
+            <a href="https://www.facebook.com/events/1758241704225296/" target="_blank">Code Camp</a>, una iniciativa de 
+            <a href="https://www.facebook.com/groups/hacktabasco/" target="_blank">Hack Tabasco</a>.
+          </p>
+          <p>También tengo un perrito; manchitas 🐶 mi fiel compañero.</p>
+          <p style="text-align: center;"><a href="assets/curriculum.pdf" download="aaronlopezsosa_cv">Descarga mi cv</a></p>
         </div>
       </div>
     </div>
@@ -152,7 +164,10 @@
         <div class="row">
           <div class="col s12 l6">
             <h5 class="white-text">Aarón López Sosa</h5>
-            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis perspiciatis accusamus temporibus quae sit nobis in hic aut atque? Veniam accusantium itaque quos. Illum ullam sit voluptate impedit in voluptates?</p>
+            <p class="grey-text text-lighten-4">
+              Amante de las tecnologías y de la buena música. Me dedico al desarrollo de software a la medida.
+              Entusiasta del desarrollo móvil usando <a href="https://ionicframework.com/" target="_blank" style="color: #F19C00;">ionic framework.</a>
+            </p>
           </div>
           <div class="col s12 l3">
             <h5  class="white-text">Sígueme en mis redes sociales</h5>
@@ -197,7 +212,7 @@
             var hash = this.hash;
             $('html, body').animate({
               scrollTop: $(hash).offset().top
-            }, 4000, function(){
+            }, 3000, function(){
               window.location.hash = hash;
             });
           }
