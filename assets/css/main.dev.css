@@ -1,5 +1,6 @@
+/* Ancho del menú */
 div#containerNav {
-  width: 80%;
+  width: 100%;
 }
 /* Imagen de fondo en la primera sección */
 .bg-full {
@@ -99,6 +100,10 @@ footer ul {
 
 /* Media query estilos en tablets */
 @media (min-width: 601px) {
+  /* Ancho del menú */
+  div#containerNav {
+    width: 80%;
+  }
   /* Estilos de la frase principal */
   .bg-full > h1 {
     font-size: 35px;
