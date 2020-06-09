@@ -1,14 +1,14 @@
 /* TEAM */
   Programmer: Aarón López Sosa
-  Site: aaronlopezsosa.com.mx
+  Site: https://alsvader.github.io/
   Contact: aaronlopezsosa [at] gmail.com
   Twitter: @als_link
   From: Villahermosa, Tabasco, Mexico
 
 /* SITE */
-  Last update: 2018/07/23
+  Last update: 2020/06/08
   Language: Spanish
   Doctype: HTML5
-  Standards: HTML5, CSS3
-  Components: Materializecss, Font Awesome, Google Fonts
+  Standards: HTML5, CSS3, JS
+  Components: Font Awesome, Google Fonts, Bootstrap
   IDE: Visual Studio Code

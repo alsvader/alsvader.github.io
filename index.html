@@ -1,235 +1,549 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122838582-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-122838582-1');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Amante de las tecnologías y de la buena música. Me dedico al desarrollo de software a la medida. Entusiasta del desarrollo móvil usando ionic framework. 
-    Participo en las comunidades de tecnología y emprendimiento Hack Tabasco, GDG Villahermosa, Codeando Villahermosa, Startup Weekend Villahermosa.
-    En mis tiempos libres participo como mentor tech impartiendo talleres en CodeCamp una iniciativa de Hack Tabasco.
-    También tengo un perrito; manchitas 🐶 mi fiel compañero." />
-    <meta name="keywords" content="desarrollador ionic, mobile hibryd development, aplicaciones de escritorio, desarrollo web, desarrollo móvil,  HTML, CSS, XML, JavaScript, js, css, php, ionic, cordova, .NET, mobile, movil, web, desktop, soft, villahermosa, hireme" />
-    <meta name="author" content="Aarón López Sosa" />
-    <meta name="robots" content="index,follow" />
-    <title>Aarón López Sosa | Desarrollo web &amp; móvil</title>
-    <!-- Humans txt -->
-    <link rel="author" href="humans.txt" />
-    <!--Import Google Icon Font-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <!-- Materializecss -->
-    <link rel="stylesheet" href="assets/css/materialize.min.css" />
-    <!-- Google fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton|Tenor+Sans" />
-    <!-- Custom style -->
-    <link rel="stylesheet" href="assets/css/main.min.css" />
-  </head>
-  <body>
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122838582-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <nav>
-      <div class="nav-wrapper teal">
-        <div id="containerNav" class="container">
-          <a href="index.html" class="brand-logo">Aarón</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="active"><a href="#firstSection" class="goTo"><i class="material-icons left">home</i>Inicio</a></li>
-            <li><a href="#aboutMe" class="goTo"><i class="material-icons left">person</i>Sobre mí</a></li>
-            <li><a href="#container_services" class="goTo"><i class="material-icons left">business_center</i>Servicios</a></li>
-            <li><a href="#container_portafolio" class="goTo"><i class="material-icons left">folder</i>Portafolio</a></li>
-            <li><a href="#formContact" class="goTo"><i class="material-icons left">email</i>Contáctame</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <ul class="sidenav" id="mobile-demo">
-      <li class="active"><a href="#firstSection" class="goTo sidenav-close"><i class="material-icons left">home</i>Inicio</a></li>
-      <li><a href="#aboutMe" class="goTo sidenav-close"><i class="material-icons left">person</i>Sobre mí</a></li>
-      <li><a href="#container_services" class="goTo sidenav-close"><i class="material-icons left">business_center</i>Servicios</a></li>
-      <li><a href="#container_portafolio" class="goTo sidenav-close"><i class="material-icons left">folder</i>Portafolio</a></li>
-      <li><a href="#formContact" class="goTo sidenav-close"><i class="material-icons left">email</i>Contáctame</a></li>
-    </ul>
+    gtag('config', 'UA-122838582-1');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+    content="Amante de las tecnologías y de la buena música. Me dedico al desarrollo de software. Actualmente trabajo en Walmart GTS en donde me desempeño desarrollando
+      aplicaciones web y móbiles usando react js y react native. También tengo un perrito; manchitas 🐶 mi fiel compañero." />
+  <meta name="keywords"
+    content="desarrollador react, mobile hibryd development, aplicaciones de escritorio, desarrollo web, desarrollo móvil,  HTML, CSS, XML, JavaScript, js, css, node, reactjs, react native, cordova, .NET, mobile, movil, web, desktop, soft, villahermosa, hireme" />
+  <meta name="author" content="Aarón López Sosa" />
+  <meta name="robots" content="index,follow" />
+  <title>Aarón López Sosa | Desarrollo web &amp; móvil</title>
+  <!-- Humans txt -->
+  <link rel="author" href="humans.txt" />
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="assets/css/styles.css" rel="stylesheet" />
+</head>
 
-    <div id="firstSection" class="bg-full">
-      <h1 class="center-align">No lo intentes. Hazlo, o no lo hagas, pero no lo intentes (Yoda - Star Wars)</h1>
-      <a href="#formContact" class="btn waves-effect waves-light goTo">
-        <i class="material-icons left">local_post_office</i>Contáctame
-      </a>
-    </div>
-
-    <!-- Contenido principal -->
-    <div id="aboutMe" class="container">
-      <div class="row">
-        <div class="col s12 m12 l4">
-          <img id="photo_profile" class="responsive-img hoverable" src="assets/imgs/foto_hack.jpg" alt="Aarón López Sosa | Desarrollo web &amp; móvil" title="Aarón López Sosa | Desarrollo web &amp; móvil" />
-        </div>
-        <div class="col s12 m12 l8">
-          <h2 class="center-align">Sobre mí</h2>
-          <p>Amante de las tecnologías y de la buena música. Me dedico al desarrollo de software a la medida.
-            Entusiasta del desarrollo móvil usando <a href="https://ionicframework.com/" target="_blank">ionic framework.</a>
-            Participo en las comunidades de tecnología y emprendimiento 
-            <a href="https://www.facebook.com/groups/hacktabasco/" target="_blank">Hack Tabasco</a>,
-            <a href="https://www.facebook.com/gdgvillahermosa/" target="_blank">GDG Villahermosa</a>,
-            <a href="https://www.facebook.com/CodeandoVillahermosa/" target="_blank">Codeando Villahermosa</a>,
-            <a href="https://www.facebook.com/swvhsa/" target="_blank">Startup Weekend Villahermosa.</a>
-          </p>
-          <p>En mis tiempos libres participo como mentor tech impartiendo talleres en 
-            <a href="https://www.facebook.com/events/1758241704225296/" target="_blank">Code Camp</a>, una iniciativa de 
-            <a href="https://www.facebook.com/groups/hacktabasco/" target="_blank">Hack Tabasco</a>.
-          </p>
-          <p>También tengo un perrito; manchitas 🐶 mi fiel compañero.</p>
-          <p style="text-align: center;"><a href="assets/curriculum.pdf" download="aaronlopezsosa_cv">Descarga mi cv</a></p>
-        </div>
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Aarón López Sosa</a><button
+        class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+        type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        Menu <em class="fas fa-bars"></em>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portafolio</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Sobre mí</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contacto</a>
+          </li>
+        </ul>
       </div>
     </div>
-
-    <!-- Servicios -->
-    <div id="container_services" class="container-full teal">
-      <div class="row">
-        <div class="col s12">
-          <h2 class="center-align">Servicios</h2>
-        </div>
-        <div class="col s10 offset-s1 m4 service">
-          <div class="col s12 m12">
-            <img class="responsive-img imgService" src="assets/imgs/desktop.png" alt="Aarón López Sosa | Aplicaciones de escritorio" title="Aarón López Sosa | Aplicaciones de escritorio" />
-          </div>
-          <div class="col s12 m12">
-            <h3>Aplicaciones de escritorio</h3>
-            <p>Desarrollo de aplicaciones de escritorio multiplataforma.</p>
-          </div>
-        </div>
-        <div class="col s10 offset-s1 m4 service">
-          <div class="col s12 m12">
-            <img class="responsive-img imgService" src="assets/imgs/web.png" alt="Aarón López Sosa | Desarrollo web" title="Aarón López Sosa | Desarrollo web" />
-          </div>
-          <div class="col s12 m12">
-            <h3>Desarrollo web</h3>
-            <p>Desarrollo de aplicaciones web a la medida de tus necesidades.</p>
-          </div>
-        </div>
-        <div class="col s10 offset-s1 m4 service">
-          <div class="col s12 m12">
-            <img class="responsive-img imgService" src="assets/imgs/mobile.png" alt="Aarón López Sosa | Desarrollo móvil" title="Aarón López Sosa | Desarrollo móvil" >
-          </div>
-          <div class="col s12 m12">
-            <h3>Desarrollo móvil</h3>
-            <p>Desarrollo de aplicaciones móviles híbridas usando <a href="https://ionicframework.com/">ionic framework</a>.</p>
-          </div>
-        </div>
+  </nav>
+  <!-- Masthead-->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+      <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
+      <!-- Masthead Heading-->
+      <h1 class="masthead-heading text-uppercase mb-0">Aarón López Sosa</h1>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><em class="fas fa-star"></em></div>
+        <div class="divider-custom-line"></div>
       </div>
+      <!-- Masthead Subheading-->
+      <p class="masthead-subheading font-weight-light mb-0">
+        JS Full Stack Develover - Entrepreneur - Dog lover 🐶
+      </p>
     </div>
-
-    <!-- Portafolio -->
-    <div id="container_portafolio" class="container">
-      <h2 class="center-align">Portafolio</h2>
+  </header>
+  <!-- Portfolio Section-->
+  <section class="page-section portfolio" id="portfolio">
+    <div class="container">
+      <!-- Portfolio Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+        Portafolio
+      </h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><em class="fas fa-star"></em></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Portfolio Grid Items-->
       <div class="row">
-        <!-- Imágenes de los proyectos -->
-        <div class="col s12 l6 imgProject">
-          <img class="materialboxed responsive-img" 
-              src="assets/imgs/udigg.png" 
-              data-caption="Unidad Digital de Información de la Gestión Gubernamental (UDIGG)."
-              alt="Unidad Digital de Información de la Gestión Gubernamental (UDIGG)" 
+        <!-- Portfolio Item 1-->
+        <div class="col-md-6 col-lg-4 mb-5">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <em class="fas fa-plus fa-3x"></em>
+              </div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/udigg.png"
+              alt="Unidad Digital de Información de la Gestión Gubernamental (UDIGG)"
               title="Unidad Digital de Información de la Gestión Gubernamental (UDIGG)" />
+          </div>
         </div>
-        <div class="col s12 l6 imgProject">
-          <img class="materialboxed responsive-img" 
-              src="assets/imgs/sagg.png" 
-              data-caption="Sistema de Acuerdos de la Gestión Gubernamental (SAGG)."
-              alt="Sistema de Acuerdos de la Gestión Gubernamental (SAGG)." 
+        <!-- Portfolio Item 2-->
+        <div class="col-md-6 col-lg-4 mb-5">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <em class="fas fa-plus fa-3x"></em>
+              </div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/sagg.png"
+              alt="Sistema de Acuerdos de la Gestión Gubernamental (SAGG)."
               title="Sistema de Acuerdos de la Gestión Gubernamental (SAGG)." />
+          </div>
         </div>
-        <div class="col s12 l6 imgProject">
-          <img class="materialboxed responsive-img" 
-              src="assets/imgs/sidcom.png" 
-              data-caption="Sistema de Comités y Subcomités (SIDCOM)."
-              alt="Sistema de Comités y Subcomités (SIDCOM)." 
+        <!-- Portfolio Item 3-->
+        <div class="col-md-6 col-lg-4 mb-5">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <em class="fas fa-plus fa-3x"></em>
+              </div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/sidcom.png" alt="Sistema de Comités y Subcomités (SIDCOM)."
               title="Sistema de Comités y Subcomités (SIDCOM)." />
+          </div>
         </div>
-        <div class="col s12 l6 imgProject">
-          <img class="materialboxed responsive-img" 
-              src="assets/imgs/dashboard_app.png" 
-              data-caption="Dashboard votaciones."
-              alt="Dashboard votaciones." 
+        <!-- Portfolio Item 4-->
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <em class="fas fa-plus fa-3x"></em>
+              </div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/dashboard_app.png" alt="Dashboard votaciones."
               title="Dashboard votaciones." />
+          </div>
+        </div>
+        <!-- Portfolio Item 5-->
+        <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <em class="fas fa-plus fa-3x"></em>
+              </div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/talentland_dashboard.png" alt="" />
+          </div>
+        </div>
+        <!-- Portfolio Item 6-->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <em class="fas fa-plus fa-3x"></em>
+              </div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Formulario de contacto -->
-    <div id="formContact" class="container-full">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfH_n5VPryNG-nWYlrXmtrp6uJR7eXrxWlbeXkJ49O4Fz2Uog/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  </section>
+  <!-- About Section-->
+  <section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+      <!-- About Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-white">
+        Sobre mí
+      </h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><em class="fas fa-star"></em></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- About Section Content-->
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <p class="lead">
+            Amante de las tecnologías y de la buena música. Me dedico al desarrollo de software. Actualmente trabajo en
+            Walmart GTS en donde me desempeño desarrollando
+            aplicaciones web y móbiles usando react js y react native. También tengo un perrito; manchitas 🐶 mi fiel
+            compañero.
+          </p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead">
+            You can create your own custom avatar for the masthead, change the
+            icon in the dividers, and add your email address to the contact
+            form to make it fully functional!
+          </p>
+        </div>
+      </div>
+      <!-- About Section Button-->
+      <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-light" href="assets/aaronlopezsosacv.pdf" download="aaronlopezsosa_cv">
+          Descarga mi cv
+        </a>
+      </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="page-footer teal">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 l6">
-            <h5 class="white-text">Aarón López Sosa</h5>
-            <p class="grey-text text-lighten-4">
-              Amante de las tecnologías y de la buena música. Me dedico al desarrollo de software a la medida.
-              Entusiasta del desarrollo móvil usando <a href="https://ionicframework.com/" target="_blank" style="color: #F19C00;">ionic framework.</a>
-            </p>
-          </div>
-          <div class="col s12 l3">
-            <h5  class="white-text">Sígueme en mis redes sociales</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/aaronlopezsosa93/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-              <li><a class="grey-text text-lighten-3" href="https://twitter.com/als_link" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a></li>
-              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/aaron.lopez.sosa.developer/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-              <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/alsvader/"><i class="fab fa-instagram" target="_blank"></i> Instagram</a></li>
-            </ul>
-          </div>
-          <div class="col s12 l3">
-            <h5  class="white-text">Comunidades</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/groups/hacktabasco/" target="_blank">Hack Tabasco</a></li>
-              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/gdgvillahermosa/" target="_blank">GDG Villahermosa</a></li>
-              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/CodeandoVillahermosa/" target="_blank">Codeando Villahermosa</a></li>
-              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/swvhsa/" target="_blank">Startup Weekend Villahermosa</a></li>
-            </ul>
-            <a href="humans.txt" target="_blank">
-              <img src="assets/imgs/humanstxt_logo.gif" alt="humans.txt" title="Humans.txt" />
-            </a>
+  </section>
+  <!-- Contact Section-->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <!-- Contact Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+        Contáctame
+      </h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><em class="fas fa-star"></em></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Contact Section Form-->
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfH_n5VPryNG-nWYlrXmtrp6uJR7eXrxWlbeXkJ49O4Fz2Uog/viewform?embedded=true"
+            title="Contact form" width="100%" height="520" frameborder="0" marginheight="0"
+            marginwidth="0">Loading...</iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer-->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Location-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Ubicación</h4>
+          <p class="lead mb-0">Villahermosa, Tabasco. México</p>
+        </div>
+        <!-- Footer Social Icons-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Sígueme en mis redes sociales</h4>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/aaron.lopez.sosa.developer/"
+            target="_blank" rel="noopener noreferrer">
+            <em class="fab fa-fw fa-facebook-f"></em>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/als_link" target="_blank"
+            rel="noopener noreferrer">
+            <em class="fab fa-fw fa-twitter"></em>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/aaronlopezsosa93/"
+            target="_blank" rel="noopener noreferrer">
+            <em class="fab fa-fw fa-linkedin-in"></em>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/alsvader/" target="_blank"
+            rel="noopener noreferrer">
+            <em class="fab fa-instagram"></em>
+          </a>
+        </div>
+        <!-- Footer About Text-->
+        <div class="col-lg-4">
+          <h4 class="text-uppercase mb-4">Acerca de mí</h4>
+          <p class="lead mb-0">
+            JS Full Stack Develover - Entrepreneur - Dog lover 🐶
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Copyright Section-->
+  <div class="copyright py-4 text-center text-white">
+    <div class="container"><small>Copyright © Aarón López Sosa 2020</small></div>
+  </div>
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+  <div class="scroll-to-top d-lg-none position-fixed">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <em class="fa fa-chevron-up"></em>
+    </a>
+  </div>
+  <!-- Portfolio Modals-->
+  <!-- Portfolio Modal 1-->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><em class="fas fa-times"></em></span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title-->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">
+                  UDIGG
+                </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <em class="fas fa-star"></em>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image-->
+                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/udigg.png" alt="" />
+                <!-- Portfolio Modal - Text-->
+                <p class="mb-5">
+                  Unidad Digital de Información de la Gestión Gubernamental (UDIGG)
+                </p>
+                <button class="btn btn-primary" data-dismiss="modal">
+                  <em class="fas fa-times fa-fw"></em>Cerrar ventana
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-          
-    <!-- Jquery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Materializecss js -->
-    <script src="assets/js/materialize.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('.sidenav').sidenav();
-        $('.modal').modal();
-        $('.materialboxed').materialbox();
+    </div>
+  </div>
+  <!-- Portfolio Modal 2-->
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><em class="fas fa-times"></em></span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title-->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">
+                  SAGG
+                </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <em class="fas fa-star"></em>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image-->
+                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/sagg.png"
+                  alt="Sistema de Acuerdos de la Gestión Gubernamental (SAGG)."
+                  title="Sistema de Acuerdos de la Gestión Gubernamental (SAGG)." />
+                <!-- Portfolio Modal - Text-->
+                <p class="mb-5">
+                  Sistema de Acuerdos de la Gestión Gubernamental (SAGG).
+                </p>
+                <button class="btn btn-primary" data-dismiss="modal">
+                  <em class="fas fa-times fa-fw"></em>Cerrar ventana
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio Modal 3-->
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><em class="fas fa-times"></em></span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title-->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">
+                  SIDCOM
+                </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <em class="fas fa-star"></em>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image-->
+                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/sidcom.png"
+                  alt="Sistema de Comités y Subcomités (SIDCOM)." title="Sistema de Comités y Subcomités (SIDCOM)." />
+                <!-- Portfolio Modal - Text-->
+                <p class="mb-5">
+                  Sistema de Comités y Subcomités (SIDCOM).
+                </p>
+                <button class="btn btn-primary" data-dismiss="modal">
+                  <em class="fas fa-times fa-fw"></em>Cerrar ventana
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio Modal 4-->
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><em class="fas fa-times"></em></span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title-->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">
+                  Dashboard votaciones
+                </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <em class="fas fa-star"></em>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image-->
+                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/dashboard_app.png"
+                  alt="Dashboard votaciones." title="Dashboard votaciones." />
+                <!-- Portfolio Modal - Text-->
+                <p class="mb-5">
+                  Aplicación móvil para el seguimiento de votaciones
+                </p>
+                <button class="btn btn-primary" data-dismiss="modal">
+                  <em class="fas fa-times fa-fw"></em>Cerrar ventana
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio Modal 5-->
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><em class="fas fa-times"></em></span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title-->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">
+                  Talent Land 2020 Dashboard
+                </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <em class="fas fa-star"></em>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image-->
+                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/talentland_dashboard.png" alt="" />
+                <!-- Portfolio Modal - Text-->
+                <p class="mb-5">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Mollitia neque assumenda ipsam nihil, molestias magnam,
+                  recusandae quos quis inventore quisquam velit asperiores,
+                  vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                  Nam.
+                </p>
+                <button class="btn btn-primary" data-dismiss="modal">
+                  <em class="fas fa-times fa-fw"></em>Cerrar ventana
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio Modal 6-->
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><em class="fas fa-times"></em></span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title-->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">
+                  Submarine
+                </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <em class="fas fa-star"></em>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image-->
+                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="" />
+                <!-- Portfolio Modal - Text-->
+                <p class="mb-5">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Mollitia neque assumenda ipsam nihil, molestias magnam,
+                  recusandae quos quis inventore quisquam velit asperiores,
+                  vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                  Nam.
+                </p>
+                <button class="btn btn-primary" data-dismiss="modal">
+                  <em class="fas fa-times fa-fw"></em>Cerrar ventana
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <!-- Contact form JS-->
+  <script src="assets/mail/jqBootstrapValidation.js"></script>
+  <script src="assets/mail/contact_me.js"></script>
+  <!-- Core theme JS -->
+  <script src="assets/js/scripts.js"></script>
+</body>
 
-        // Scroll To
-        $('.goTo').click(function(event) {
-          if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 3000, function(){
-              window.location.hash = hash;
-            });
-          }
-        }); 
-      });
-    </script>
-            
-  </body>
 </html>
