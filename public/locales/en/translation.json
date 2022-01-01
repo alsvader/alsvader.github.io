@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "languages": {
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "home": {
+    "hey": "Hey",
+    "name": "I'm Aaron",
+    "job": "Mobile & Web App ",
+    "developer": "Developer",
+    "hireMe": "Hire Me",
+    "downloadCv": "Download CV",
+    "personalDetails": "Personal Details",
+    "languages": "Spanish, English, French",
+    "services": "Services",
+    "webDevTitle": "Web Development",
+    "webDevDescr": "Customized web app development services.",
+    "appDevTitle": "Mobile App Development",
+    "appDevDescr": "Cross-Platform app development for Android and iOS.",
+    "desktopDevTitle": "Desktop application",
+    "desktopDevDescr": "Cross-Platform desktop apps development.",
+    "portfolio": "Portfolio",
+    "fssWebDescr": "Web application that allows the users create feature spaces",
+    "maasDescr": "Mobile Apps Administration Site for International Markets",
+    "availabilityDescr": "Aplicación web que permite crear espacios de ventas en tienda",
+    "fssAppDescr": "Aplicación móvil que permite consultar los espacios de venta disponibles en tienda"
+  }
+}

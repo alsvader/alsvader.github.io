@@ -1,0 +1,22 @@
+[
+  {
+    "title": "FSS - Web Platform",
+    "description": "home.fssWebDescr",
+    "image": "fss"
+  },
+  {
+    "title": "MAAS",
+    "description": "home.maasDescr",
+    "image": "maas"
+  },
+  {
+    "title": "Availability",
+    "description": "home.availabilityDescr",
+    "image": "availability"
+  },
+  {
+    "title": "FSS Mobile App",
+    "description": "home.fssAppDescr",
+    "image": "fssMobile"
+  }
+]
