@@ -10,6 +10,9 @@ let theme = createMuiTheme({
     greyColor: {
       main: '#8492a6',
     },
+    white: {
+      main: '#FFFFFF'
+    },
   },
   typography: {
     fontFamily: ['Nunito', 'sans-serif'].join(','),

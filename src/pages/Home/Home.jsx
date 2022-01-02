@@ -22,7 +22,7 @@ import {
   PhoneIphone,
   Language,
 } from '@material-ui/icons';
-import { Portfolio } from '../../components';
+import { Portfolio, RecentBlog } from '../../components';
 import ProfileImage from '../../assets/images/profile.jpg';
 import styles from './styles';
 
@@ -172,6 +172,12 @@ const Home = ({ classes }) => {
       <Grid item xs={12} className={classes.portfolioContainer}>
         <h2>{t('home.portfolio')}</h2>
         <Portfolio />
+      </Grid>
+      <Grid item xs={12}>
+        <RecentBlog />
+      </Grid>
+      <Grid item xs={12} className={classes.portfolioContainer}>
+        <h2>Contacto</h2>
       </Grid>
     </Grid>
   );

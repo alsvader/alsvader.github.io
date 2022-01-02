@@ -30,6 +30,7 @@
     "fssWebDescr": "Web application that allows the users create feature spaces",
     "maasDescr": "Mobile Apps Administration Site for International Markets",
     "availabilityDescr": "Aplicación web que permite crear espacios de ventas en tienda",
-    "fssAppDescr": "Aplicación móvil que permite consultar los espacios de venta disponibles en tienda"
+    "fssAppDescr": "Aplicación móvil que permite consultar los espacios de venta disponibles en tienda",
+    "recentBlog": "Recent From Blog"
   }
 }
