@@ -14,7 +14,7 @@ export const RecentBlog = ({ classes }) => {
 			<h2>{t('home.recentBlog')}</h2>
 			<Grid container spacing={4}>
 				{new Array(3).fill(' ').map((item, index) => (
-					<Grid item xs={12} sm={6} md={4}>
+					<Grid key={index} item xs={12} sm={6} md={4}>
 						<BlogCard />
 					</Grid>
 				))}
