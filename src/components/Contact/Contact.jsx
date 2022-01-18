@@ -97,10 +97,10 @@ export const Contact = ({ classes }) => {
 
 	return (
 		<Grid container spacing={1} className={classes.container}>
-			<Grid item xs={12}>
+			<Grid item xs={12} md={5} xl={6}>
 				<img src={ContactImage} alt="Contact Me" />
 			</Grid>
-			<Grid item xs={12}>
+			<Grid item xs={12} md={7} xl={6}>
 				<h2>{t('home.contactMe')}</h2>
 				<p>{t('home.contactDescr')}</p>
 				<form onSubmit={handleSubmit} noValidate autoComplete="off">
