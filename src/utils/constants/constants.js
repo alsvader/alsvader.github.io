@@ -1,5 +1,6 @@
 const BREAKPOINTS = {
 	xs: 0,
+	xs400: 425,
 	sm: 600,
 	tablet: 768,
 	md: 960,

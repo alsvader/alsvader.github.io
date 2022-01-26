@@ -1,6 +1,7 @@
 const styles = (theme) => ({
 	container: {
 		padding: '15px',
+		marginBottom: '5rem',
 		'& form': {
 			width: '100%',
 		},
@@ -54,6 +55,7 @@ const styles = (theme) => ({
 		},
 		[theme.breakpoints.up('laptopLg')]: {
 			margin: '0 auto',
+			marginBottom: '5rem',
 			width: '90%',
 		},
 		[theme.breakpoints.up('xl')]: {

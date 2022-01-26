@@ -42,6 +42,12 @@
 		"inputMessageHelperText": "Please specify your message",
 		"getBackText": "I'll get back to you in 1-2 business days.",
 		"formError": "Please complete the form and try again.",
-		"formSuccess": "Thank you for your message!."
+		"formSuccess": "Thank you for your message!.",
+		"location": "Location",
+		"villahermosa": "Villahermosa, Tabasco. Mexico",
+		"followSocialMedia": "Follow me on social media",
+		"aboutMe": "About me",
+		"aboutMeDescr": "Software Engineer | Entrepreneur | Dog lover 🐶",
+		"copyright": "Built with ❤️ by © Aarón López Sosa. 2022. All rights reserved."
 	}
 }

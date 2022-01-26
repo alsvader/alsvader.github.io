@@ -22,7 +22,7 @@ import {
 	PhoneIphone,
 	Language,
 } from '@material-ui/icons';
-import { Portfolio, RecentBlog, Contact } from '../../components';
+import { Portfolio, RecentBlog, Contact, Footer } from '../../components';
 import ProfileImage from '../../assets/images/profile.jpg';
 import styles from './styles';
 
@@ -179,6 +179,9 @@ const Home = ({ classes }) => {
 			<Grid item xs={12} className={classes.portfolioContainer}>
 				<Contact />
 			</Grid>
+			<Grid item xs={12} className={classes.footer}>
+				<Footer />
+			</Grid>
 		</Grid>
 	);
 };
@@ -196,6 +199,7 @@ Home.propTypes = {
 		gridServices: PropTypes.string.isRequired,
 		cardService: PropTypes.string.isRequired,
 		portfolioContainer: PropTypes.string.isRequired,
+		footer: PropTypes.string.isRequired,
 	}).isRequired,
 };
 
