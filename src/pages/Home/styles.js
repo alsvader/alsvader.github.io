@@ -12,7 +12,7 @@ const styles = (theme) => ({
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 		color: '#ffffff',
-		height: '100vh',
+		height: 'auto',
 		padding: '70px 0 !important',
 		textAlign: 'center',
 		width: '100%',
@@ -23,11 +23,17 @@ const styles = (theme) => ({
 		'& h2 > span': {
 			color: theme.palette.primary.main,
 		},
+		[theme.breakpoints.up('tablet')]: {
+			height: '80vh',
+		},
+		[theme.breakpoints.up('ipadAir')]: {
+			height: '70vh',
+		},
 		[theme.breakpoints.up('md')]: {
 			height: '95vh',
 		},
 		[theme.breakpoints.up('laptopLg')]: {
-			height: '80vh',
+			height: '100vh',
 		},
 		[theme.breakpoints.up('xl')]: {
 			height: '75vh',
@@ -55,6 +61,9 @@ const styles = (theme) => ({
 	},
 	containerInfoDetail: {
 		marginTop: '-15%',
+		[theme.breakpoints.up('mobile360')]: {
+			marginTop: '-10%',
+		},
 		[theme.breakpoints.up('sm')]: {
 			marginTop: '-25%',
 		},
