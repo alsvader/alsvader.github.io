@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { withStyles } from '@material-ui/core/styles';
@@ -22,19 +23,48 @@ import {
 	PhoneIphone,
 	Language,
 } from '@material-ui/icons';
+import { useLocation } from 'react-router-dom';
 import { Portfolio, RecentBlog, Contact, Footer } from '../../components';
 import ProfileImage from '../../assets/images/profile.jpg';
 import styles from './styles';
 
 const Home = ({ classes }) => {
 	const [t] = useTranslation();
-	// useEffect(() => {
-	//   if (targetRef !== null) {
-	//     setTimeout(() => {
-	//       targetRef.current.scrollIntoView({ behavior: 'smooth' });
-	//     }, 500);
-	//   }
-	// }, [targetRef]);
+	const location = useLocation();
+	const homeTarget = useRef(null);
+	const servicesTarget = useRef(null);
+	const portfolioTarget = useRef(null);
+	const contactTarget = useRef(null);
+
+	const scrollView = (target) => {
+		if (target && target.current !== null) {
+			setTimeout(() => {
+				target.current.scrollIntoView({ behavior: 'smooth' });
+			}, 500);
+		}
+	};
+
+	useEffect(() => {
+		const { hash, state } = location;
+
+		switch (hash) {
+			case '':
+				const target = state?.isCrollable ? homeTarget : null;
+				scrollView(target);
+				break;
+			case '#services':
+				scrollView(servicesTarget);
+				break;
+			case '#portfolio':
+				scrollView(portfolioTarget);
+				break;
+			case '#contact':
+				scrollView(contactTarget);
+				break;
+			default:
+				break;
+		}
+	}, [location]);
 
 	const downloadCv = async () => {
 		try {
@@ -54,7 +84,7 @@ const Home = ({ classes }) => {
 
 	return (
 		<Grid container className={classes.root} spacing={0}>
-			<Grid item xs={12} className={classes.homeGrid}>
+			<Grid item xs={12} className={classes.homeGrid} ref={homeTarget}>
 				<Container fixed>
 					<Avatar
 						alt="Aaron Lopez Sosa"
@@ -129,7 +159,7 @@ const Home = ({ classes }) => {
 					</Paper>
 				</Container>
 			</Grid>
-			<Container>
+			<Container ref={servicesTarget}>
 				<Grid
 					container
 					spacing={2}
@@ -169,14 +199,24 @@ const Home = ({ classes }) => {
 					</Grid>
 				</Grid>
 			</Container>
-			<Grid item xs={12} className={classes.portfolioContainer}>
+			<Grid
+				item
+				xs={12}
+				className={classes.portfolioContainer}
+				ref={portfolioTarget}
+			>
 				<h2>{t('home.portfolio')}</h2>
 				<Portfolio />
 			</Grid>
 			<Grid item xs={12}>
 				<RecentBlog />
 			</Grid>
-			<Grid item xs={12} className={classes.portfolioContainer}>
+			<Grid
+				item
+				xs={12}
+				className={classes.portfolioContainer}
+				ref={contactTarget}
+			>
 				<Contact />
 			</Grid>
 			<Grid item xs={12} className={classes.footer}>
