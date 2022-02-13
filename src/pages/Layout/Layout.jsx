@@ -5,7 +5,6 @@ import { ROUTES } from '../../utils/constants';
 const Layout = () => {
 	return (
 		<>
-			{/* <MenuBar /> */}
 			<Router>
 				<MenuBar />
 				<DrawerMenu />
