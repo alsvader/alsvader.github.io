@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { withStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
@@ -12,6 +13,9 @@ export const RecentBlog = ({ classes }) => {
 	return (
 		<Container className={classes.recentBlogContainer}>
 			<h2>{t('home.recentBlog')}</h2>
+			<div className={classes.viewAll}>
+				<Link to="/as">View all</Link>
+			</div>
 			<Grid container spacing={4}>
 				{new Array(3).fill(' ').map((item, index) => (
 					<Grid key={index} item xs={12} sm={6} md={4}>
@@ -30,6 +34,7 @@ RecentBlog.propTypes = {
 		card: PropTypes.string.isRequired,
 		fabButton: PropTypes.string.isRequired,
 		shareContainer: PropTypes.string.isRequired,
+		viewAll: PropTypes.string.isRequired,
 	}).isRequired,
 };
 
