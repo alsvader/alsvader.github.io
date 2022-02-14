@@ -54,5 +54,9 @@
 		"title": "Página no encontrada",
 		"descr": "Parece que no pudimos encontrar lo que buscaste. La página que buscabas no existe, no está disponible o se cargó incorrectamente.",
 		"backHome": "Ir a Inicio"
+	},
+	"blog": {
+		"blog": "Blog",
+		"searchResults": "Resultados de búsqueda"
 	}
 }

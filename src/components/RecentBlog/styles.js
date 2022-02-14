@@ -21,12 +21,6 @@ const styles = (theme) => ({
 			fontSize: '1.9rem',
 			textAlign: 'center',
 			marginBottom: '10%',
-			// [theme.breakpoints.up('sm')]: {
-			// 	marginBottom: '6%',
-			// },
-			// [theme.breakpoints.up('md')]: {
-			// 	marginBottom: '4%',
-			// },
 		},
 		'& h3': {
 			fontSize: '1.5rem',

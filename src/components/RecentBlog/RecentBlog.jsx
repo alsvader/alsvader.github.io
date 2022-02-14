@@ -14,7 +14,7 @@ export const RecentBlog = ({ classes }) => {
 		<Container className={classes.recentBlogContainer}>
 			<h2>{t('home.recentBlog')}</h2>
 			<div className={classes.viewAll}>
-				<Link to="/as">View all</Link>
+				<Link to="/blog">View all</Link>
 			</div>
 			<Grid container spacing={4}>
 				{new Array(3).fill(' ').map((item, index) => (

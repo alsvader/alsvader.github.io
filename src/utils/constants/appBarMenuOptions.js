@@ -14,7 +14,11 @@ const OPTIONS = [
 		to: { pathname: '/', hash: '#portfolio' },
 		icon: 'Work',
 	},
-	{ label: 'menu.blog', to: { pathname: '/', hash: '' }, icon: 'LibraryBooks' },
+	{
+		label: 'menu.blog',
+		to: { pathname: '/blog', hash: '' },
+		icon: 'LibraryBooks',
+	},
 	{
 		label: 'menu.contact',
 		to: { pathname: '/', hash: '#contact' },
