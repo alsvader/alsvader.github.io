@@ -24,7 +24,7 @@ import {
 	Language,
 } from '@material-ui/icons';
 import { useLocation } from 'react-router-dom';
-import { Portfolio, RecentBlog, Contact, Footer } from '../../components';
+import { Portfolio, RecentBlog, Contact } from '../../components';
 import ProfileImage from '../../assets/images/profile.jpg';
 import styles from './styles';
 
@@ -218,9 +218,6 @@ const Home = ({ classes }) => {
 				ref={contactTarget}
 			>
 				<Contact />
-			</Grid>
-			<Grid item xs={12} className={classes.footer}>
-				<Footer />
 			</Grid>
 		</Grid>
 	);

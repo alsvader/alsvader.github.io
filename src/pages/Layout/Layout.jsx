@@ -1,8 +1,13 @@
+import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { MenuBar, DrawerMenu } from '../../components';
+import { Grid } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import { MenuBar, DrawerMenu, Footer } from '../../components';
+import NotFound from '../404/NotFound';
 import { ROUTES } from '../../utils/constants';
+import styles from '../Home/styles';
 
-const Layout = () => {
+const Layout = ({ classes }) => {
 	return (
 		<>
 			<Router>
@@ -20,12 +25,21 @@ const Layout = () => {
 					))}
 					<Route path="*">
 						{/* TODO: Create a component that will render the not found page  */}
-						<h1>No Match</h1>
+						<NotFound />
 					</Route>
 				</Switch>
+				<Grid item xs={12} className={classes.footer}>
+					<Footer />
+				</Grid>
 			</Router>
 		</>
 	);
 };
 
-export default Layout;
+Layout.propTypes = {
+	classes: PropTypes.shape({
+		footer: PropTypes.string.isRequired,
+	}).isRequired,
+};
+
+export default withStyles(styles)(Layout);

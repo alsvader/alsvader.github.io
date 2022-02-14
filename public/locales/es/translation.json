@@ -49,5 +49,10 @@
 		"aboutMe": "Acerca de mí",
 		"aboutMeDescr": "Software Engineer | Entrepreneur | Dog lover 🐶",
 		"copyright": "Built with ❤️ by © Aarón López Sosa. 2022. All rights reserved."
+	},
+	"notFound": {
+		"title": "Página no encontrada",
+		"descr": "Parece que no pudimos encontrar lo que buscaste. La página que buscabas no existe, no está disponible o se cargó incorrectamente.",
+		"backHome": "Ir a Inicio"
 	}
 }
