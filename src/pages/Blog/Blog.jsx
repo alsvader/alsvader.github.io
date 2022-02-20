@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { Chip } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { Chip, Paper, IconButton, Button } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import SearchIcon from '@material-ui/icons/Search';
+import { withStyles, useTheme } from '@material-ui/core/styles';
+import { BlogCard } from '../../components';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
 	const [tags, setTags] = useState([]);
 	const [t] = useTranslation();
+	const theme = useTheme();
+	const matches = useMediaQuery(theme.breakpoints.up('tablet'));
 
 	const addOrRemoveTag = (tag) => {
 		console.log(tag);
@@ -31,6 +36,32 @@ const Blog = ({ classes }) => {
 					<li>{t('blog.searchResults')}</li>
 				</ul>
 			</nav>
+			<div className={classes.searchBarContainer}>
+				<Paper elevation={3}>
+					<form>
+						<IconButton aria-label="search" color="primary">
+							<SearchIcon />
+						</IconButton>
+						<input type="text" placeholder="Search an article" />
+						<h6>123 results</h6>
+						{matches && (
+							<Button variant="contained" color="primary" size="large">
+								Search
+							</Button>
+						)}
+					</form>
+				</Paper>
+				{!matches && (
+					<Button
+						id="mobileButton"
+						variant="contained"
+						color="primary"
+						size="large"
+					>
+						Search
+					</Button>
+				)}
+			</div>
 			<div className={classes.chipContainer}>
 				<Chip
 					label="React"
@@ -63,6 +94,13 @@ const Blog = ({ classes }) => {
 					onClick={() => addOrRemoveTag('Material UI')}
 				/>
 			</div>
+			<section className={classes.articlesContainer}>
+				{new Array(9).fill(' ').map((item, index) => (
+					<article>
+						<BlogCard />
+					</article>
+				))}
+			</section>
 		</main>
 	);
 };
@@ -71,6 +109,8 @@ Blog.propTypes = {
 	classes: PropTypes.shape({
 		container: PropTypes.string.isRequired,
 		chipContainer: PropTypes.string.isRequired,
+		searchBarContainer: PropTypes.string.isRequired,
+		articlesContainer: PropTypes.string.isRequired,
 	}).isRequired,
 };
 

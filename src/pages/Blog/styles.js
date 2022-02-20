@@ -19,6 +19,62 @@ const styles = (theme) => ({
 				},
 			},
 		},
+		[theme.breakpoints.up('md')]: {
+			padding: '3%',
+		},
+		[theme.breakpoints.up('laptop')]: {
+			margin: '0 auto',
+			width: '92%',
+		},
+		[theme.breakpoints.up('laptopLg')]: {
+			padding: '2%',
+			width: '81%',
+		},
+		[theme.breakpoints.up('xl')]: {
+			width: '67%',
+		},
+	},
+	searchBarContainer: {
+		marginBottom: '2rem',
+		width: '100%',
+		'& .MuiPaper-root': {
+			padding: '1rem',
+			'& form': {
+				alignItems: 'center',
+				display: 'flex',
+				flexDirection: 'row',
+				width: '100%',
+				'& button:first-child': {
+					padding: 0,
+				},
+				'& input[type="text"]': {
+					border: 'none',
+					fontSize: '1rem',
+					flex: 1,
+					height: '1rem',
+					padding: '1rem',
+					'&::placeholder': {
+						fontSize: '1rem',
+					},
+					'&:focus-visible': {
+						outline: 'none',
+					},
+				},
+				'& h6': {
+					color: '#677788',
+					display: 'none',
+					fontSize: '0.9rem',
+					margin: 0,
+					[theme.breakpoints.up('tablet')]: {
+						display: 'block',
+						padding: '0.5rem',
+					},
+				},
+			},
+		},
+		'& #mobileButton': {
+			width: '100%',
+		},
 	},
 	chipContainer: {
 		display: 'flex',
@@ -26,6 +82,36 @@ const styles = (theme) => ({
 		flexWrap: 'wrap',
 		'& > *': {
 			margin: theme.spacing(0.5),
+		},
+	},
+	articlesContainer: {
+		display: 'flex',
+		flexDirection: 'column',
+		gap: '2rem',
+		marginTop: '2rem',
+		width: '100%',
+		[theme.breakpoints.up('sm')]: {
+			gap: '3rem',
+			'& article': {
+				margin: '0 auto',
+				width: '90%',
+				[theme.breakpoints.up('tablet')]: {
+					margin: 0,
+					width: '46%',
+				},
+				[theme.breakpoints.up('laptop')]: {
+					width: '29%',
+				},
+				[theme.breakpoints.up('laptopLg')]: {
+					width: '30%',
+				},
+			},
+		},
+		[theme.breakpoints.up('tablet')]: {
+			flexDirection: 'row',
+			flexWrap: 'wrap',
+			justifyContent: 'center',
+			marginTop: '3rem',
 		},
 	},
 });
