@@ -113,6 +113,12 @@ const styles = (theme) => ({
 			justifyContent: 'center',
 			marginTop: '3rem',
 		},
+		'& #pagination': {
+			display: 'flex',
+			justifyContent: 'center',
+			marginTop: '1rem',
+			marginBottom: '1rem',
+		},
 	},
 });
 
