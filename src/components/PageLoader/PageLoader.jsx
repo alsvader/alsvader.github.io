@@ -1,10 +1,10 @@
 import React from 'react';
-import './styles.css';
+import styles from './styles.module.css';
 
 const PageLoader = () => {
 	return (
-		<div className="drawing" id="loading">
-			<div className="loading-dot"></div>
+		<div className={styles.drawing}>
+			<div className={styles.loadingDot}></div>
 		</div>
 	);
 };
