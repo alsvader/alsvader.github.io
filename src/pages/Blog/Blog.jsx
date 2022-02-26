@@ -2,12 +2,12 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Chip, Paper, IconButton, Button } from '@material-ui/core';
-import Pagination from '@material-ui/lab/Pagination';
+// import Pagination from '@material-ui/lab/Pagination';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import SearchIcon from '@material-ui/icons/Search';
+import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles, useTheme } from '@material-ui/core/styles';
-import { BlogCard } from '../../components';
-import SadFace from '../../assets/icons/sad_face.svg';
+// import { BlogCard } from '../../components';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
@@ -102,10 +102,17 @@ const Blog = ({ classes }) => {
 						<BlogCard />
 					</article>
 				))}
-				<div id="pagination">
+				*/}
+				<div className={classes.notFoundContainer}>
+					<WarningIcon color="primary" />
+					<h2>No results</h2>
+					<p>
+						No articles found for <span>"this is a long term search"</span>
+					</p>
+				</div>
+				{/* <div id="pagination">
 					<Pagination count={10} color="primary" size="large" />
 				</div> */}
-				<SadFace />
 			</section>
 		</main>
 	);
@@ -117,6 +124,7 @@ Blog.propTypes = {
 		chipContainer: PropTypes.string.isRequired,
 		searchBarContainer: PropTypes.string.isRequired,
 		articlesContainer: PropTypes.string.isRequired,
+		notFoundContainer: PropTypes.string.isRequired,
 	}).isRequired,
 };
 

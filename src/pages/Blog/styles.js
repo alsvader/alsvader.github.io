@@ -120,6 +120,31 @@ const styles = (theme) => ({
 			marginBottom: '1rem',
 		},
 	},
+	notFoundContainer: {
+		alignItems: 'center',
+		display: 'flex',
+		flexDirection: 'column',
+		margin: '1rem 0 4rem',
+
+		'& > svg': {
+			fontSize: '5rem',
+		},
+
+		'& h2': {
+			fontSize: '2rem',
+			margin: '4px 0',
+			textTransform: 'capitalize',
+		},
+
+		'& p': {
+			fontSize: '1.2rem',
+			margin: 0,
+			textAlign: 'center',
+			'& > span': {
+				fontWeight: 'bold',
+			},
+		},
+	},
 });
 
 export default styles;
