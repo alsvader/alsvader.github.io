@@ -145,6 +145,16 @@ const styles = (theme) => ({
 			},
 		},
 	},
+	loading: {
+		alignItems: 'center',
+		display: 'flex',
+		flexDirection: 'column',
+		margin: '4rem 0',
+		'& h2': {
+			fontSize: '2rem',
+			fontWeight: 'bold',
+		},
+	},
 });
 
 export default styles;

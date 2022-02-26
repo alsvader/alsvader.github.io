@@ -1,16 +1,23 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { Chip, Paper, IconButton, Button } from '@material-ui/core';
-// import Pagination from '@material-ui/lab/Pagination';
+import {
+	Chip,
+	Paper,
+	IconButton,
+	Button,
+	CircularProgress,
+} from '@material-ui/core';
+import Pagination from '@material-ui/lab/Pagination';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import SearchIcon from '@material-ui/icons/Search';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles, useTheme } from '@material-ui/core/styles';
-// import { BlogCard } from '../../components';
+import { BlogCard } from '../../components';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
+	const [isLoading, setIsLoading] = useState(true);
 	const [tags, setTags] = useState([]);
 	const [t] = useTranslation();
 	const theme = useTheme();
@@ -97,19 +104,26 @@ const Blog = ({ classes }) => {
 				/>
 			</div>
 			<section className={classes.articlesContainer}>
+				{isLoading && (
+					<div className={classes.loading}>
+						<CircularProgress size={80} />
+						<h2>{t('blog.searching')}</h2>
+					</div>
+				)}
+
 				{/* {new Array(9).fill(' ').map((item, index) => (
 					<article key={index}>
 						<BlogCard />
 					</article>
-				))}
-				*/}
-				<div className={classes.notFoundContainer}>
+				))} */}
+
+				{/* <div className={classes.notFoundContainer}>
 					<WarningIcon color="primary" />
-					<h2>No results</h2>
+					<h2>{t('blog.noResults')}</h2>
 					<p>
-						No articles found for <span>"this is a long term search"</span>
+						{t('blog.noArticles')} <span>"this is a long term search"</span>
 					</p>
-				</div>
+				</div> */}
 				{/* <div id="pagination">
 					<Pagination count={10} color="primary" size="large" />
 				</div> */}
@@ -125,6 +139,7 @@ Blog.propTypes = {
 		searchBarContainer: PropTypes.string.isRequired,
 		articlesContainer: PropTypes.string.isRequired,
 		notFoundContainer: PropTypes.string.isRequired,
+		loading: PropTypes.string.isRequired,
 	}).isRequired,
 };
 

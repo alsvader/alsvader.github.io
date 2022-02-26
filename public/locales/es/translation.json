@@ -57,6 +57,9 @@
 	},
 	"blog": {
 		"blog": "Blog",
-		"searchResults": "Resultados de búsqueda"
+		"searchResults": "Resultados de búsqueda",
+		"noResults": "No hay resultados",
+		"noArticles": "No se encontraron resultados para ",
+		"searching": "Buscando..."
 	}
 }

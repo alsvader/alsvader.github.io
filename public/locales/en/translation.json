@@ -57,6 +57,9 @@
 	},
 	"blog": {
 		"blog": "Blog",
-		"searchResults": "Search results"
+		"searchResults": "Search results",
+		"noResults": "No results",
+		"noArticles": "No articles found for ",
+		"searching": "Searching..."
 	}
 }

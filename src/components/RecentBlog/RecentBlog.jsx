@@ -30,10 +30,6 @@ export const RecentBlog = ({ classes }) => {
 RecentBlog.propTypes = {
 	classes: PropTypes.shape({
 		recentBlogContainer: PropTypes.string.isRequired,
-		tagContainer: PropTypes.string.isRequired,
-		card: PropTypes.string.isRequired,
-		fabButton: PropTypes.string.isRequired,
-		shareContainer: PropTypes.string.isRequired,
 		viewAll: PropTypes.string.isRequired,
 	}).isRequired,
 };

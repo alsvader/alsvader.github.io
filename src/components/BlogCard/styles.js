@@ -1,6 +1,18 @@
 const styles = (theme) => ({
 	card: {
 		position: 'relative',
+		'& h3': {
+			fontSize: '1.5rem',
+			fontWeight: 700,
+			'& a': {
+				color: 'rgba(0, 0, 0, 0.87)',
+				textDecoration: 'none',
+				transition: 'all 0.5s ease',
+				'&:hover': {
+					color: theme.palette.primary.main,
+				},
+			},
+		},
 	},
 	tagContainer: {
 		display: 'flex',
