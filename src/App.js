@@ -7,14 +7,14 @@ import { Layout } from './pages';
 import './index.css';
 
 function App() {
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Layout />
-      </ThemeProvider>
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<Layout />
+			</ThemeProvider>
+		</Provider>
+	);
 }
 
 export default App;

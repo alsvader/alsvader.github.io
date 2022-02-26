@@ -104,18 +104,18 @@ const Blog = ({ classes }) => {
 				/>
 			</div>
 			<section className={classes.articlesContainer}>
-				{isLoading && (
+				{/* {isLoading && (
 					<div className={classes.loading}>
 						<CircularProgress size={80} />
 						<h2>{t('blog.searching')}</h2>
 					</div>
-				)}
+				)} */}
 
-				{/* {new Array(9).fill(' ').map((item, index) => (
+				{new Array(9).fill(' ').map((item, index) => (
 					<article key={index}>
 						<BlogCard />
 					</article>
-				))} */}
+				))}
 
 				{/* <div className={classes.notFoundContainer}>
 					<WarningIcon color="primary" />
@@ -124,9 +124,9 @@ const Blog = ({ classes }) => {
 						{t('blog.noArticles')} <span>"this is a long term search"</span>
 					</p>
 				</div> */}
-				{/* <div id="pagination">
+				<div id="pagination">
 					<Pagination count={10} color="primary" size="large" />
-				</div> */}
+				</div>
 			</section>
 		</main>
 	);

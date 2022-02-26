@@ -6,3 +6,4 @@ export { default as RecentBlog } from './RecentBlog/RecentBlog';
 export { default as BlogCard } from './BlogCard/BlogCard';
 export { default as Contact } from './Contact/Contact';
 export { default as Footer } from './Footer/Footer';
+export { default as PageLoader } from './PageLoader/PageLoader';
