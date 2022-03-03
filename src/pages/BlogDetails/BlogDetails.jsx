@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Avatar, IconButton } from '@material-ui/core';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { withStyles } from '@material-ui/core/styles';
+import { Giscus } from '@giscus/react';
 import Profile from '../../assets/images/profile.jpg';
 import styles from './styles';
 
@@ -91,6 +92,20 @@ const BlogDetails = ({ classes }) => {
 						Mike Shinoda, who raised around $11,000 for his first NFT, recently
 						tweeted.
 					</p>
+				</div>
+				<div className="comments">
+					<Giscus
+						repo="alsvader/alsvader.github.io"
+						repoId="MDEwOlJlcG9zaXRvcnkxNDE3ODQ4MjE="
+						category="Comments"
+						categoryId="DIC_kwDOCHN29c4CN7ZR"
+						mapping="pathname"
+						reactionsEnabled="1"
+						emitMetadata="0"
+						theme="light"
+						lang="es"
+						term="intro-to-react"
+					/>
 				</div>
 			</article>
 		</main>

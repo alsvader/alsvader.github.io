@@ -45,6 +45,9 @@ const styles = (theme) => ({
 				},
 			},
 		},
+		'& .comments': {
+			margin: '6rem 0',
+		},
 		'& h1, h2, h3, h4': {
 			fontFamily: "'Manrope', sans-serif",
 		},
