@@ -35,6 +35,7 @@ const MenuBar = ({
 	languageLabel,
 	setMenuItemSelected,
 	setLanguageLabel,
+	setLanguageCode,
 	openDrawer,
 }) => {
 	const [t, i18n] = useTranslation();
@@ -50,6 +51,7 @@ const MenuBar = ({
 
 	const changeLanguage = (code, index, label) => {
 		i18n.changeLanguage(code);
+		setLanguageCode(code);
 		setMenuItemSelected(index);
 		setLanguageLabel(label);
 		closeChangeLanguage();
@@ -130,6 +132,7 @@ MenuBar.propTypes = {
 	languageLabel: PropTypes.string.isRequired,
 	setMenuItemSelected: PropTypes.func.isRequired,
 	setLanguageLabel: PropTypes.func.isRequired,
+	setLanguageCode: PropTypes.string.isRequired,
 	openDrawer: PropTypes.func.isRequired,
 };
 
@@ -144,6 +147,7 @@ const mapDispatchToProps = (dispatch) => ({
 	setMenuItemSelected: (index) =>
 		dispatch(SYSTEM_ACTIONS.setLanguageMenuItemSelected(index)),
 	setLanguageLabel: (label) => dispatch(SYSTEM_ACTIONS.setLanguageLabel(label)),
+	setLanguageCode: (code) => dispatch(SYSTEM_ACTIONS.setLanguageCode(code)),
 	openDrawer: () => dispatch(SYSTEM_ACTIONS.setDrawerOpen(true)),
 });
 
