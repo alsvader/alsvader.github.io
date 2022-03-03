@@ -10,6 +10,12 @@ import styles from './styles';
 
 const BlogDetails = ({ classes }) => {
 	const languageCode = useSelector((state) => state.system.languageCode);
+	const {
+		REACT_APP_GISCUS_REPO,
+		REACT_APP_GISCUS_REPO_ID,
+		REACT_APP_GISCUS_CATEGORY,
+		REACT_APP_GISCUS_CATEGORY_ID,
+	} = process.env;
 
 	return (
 		<main className={classes.container}>
@@ -98,10 +104,10 @@ const BlogDetails = ({ classes }) => {
 				</div>
 				<div className="comments">
 					<Giscus
-						repo="alsvader/alsvader.github.io"
-						repoId="MDEwOlJlcG9zaXRvcnkxNDE3ODQ4MjE="
-						category="Comments"
-						categoryId="DIC_kwDOCHN29c4CN7ZR"
+						repo={REACT_APP_GISCUS_REPO}
+						repoId={REACT_APP_GISCUS_REPO_ID}
+						category={REACT_APP_GISCUS_CATEGORY}
+						categoryId={REACT_APP_GISCUS_CATEGORY_ID}
 						mapping="pathname"
 						reactionsEnabled="1"
 						emitMetadata="0"
