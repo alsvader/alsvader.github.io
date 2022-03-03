@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Local development
+
+Before running the app in development mode, you must make sure you have created a .env file where you'll place all environments variables needed for the project.
+
+Once you have created a .env file, copy & paste these lines, then add the proper value for each key.
+
+```js
+REACT_APP_GISCUS_REPO=
+REACT_APP_GISCUS_REPO_ID=
+REACT_APP_GISCUS_CATEGORY=
+REACT_APP_GISCUS_CATEGORY_ID=
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
