@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { Avatar, IconButton } from '@material-ui/core';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { withStyles } from '@material-ui/core/styles';
@@ -8,6 +9,8 @@ import Profile from '../../assets/images/profile.jpg';
 import styles from './styles';
 
 const BlogDetails = ({ classes }) => {
+	const languageCode = useSelector((state) => state.system.languageCode);
+
 	return (
 		<main className={classes.container}>
 			<article>
@@ -103,7 +106,7 @@ const BlogDetails = ({ classes }) => {
 						reactionsEnabled="1"
 						emitMetadata="0"
 						theme="light"
-						lang="es"
+						lang={languageCode || 'en'}
 						term="intro-to-react"
 					/>
 				</div>
