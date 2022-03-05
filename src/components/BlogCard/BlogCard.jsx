@@ -16,10 +16,12 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import styles from './styles';
 
-export const BlogCard = ({ classes }) => {
+export const BlogCard = ({ classes, attributes }) => {
 	const [shareOpen, setShareOpen] = useState(false);
 
 	const openShare = () => setShareOpen(!shareOpen);
+
+	const { title, slug, tag, description } = attributes;
 
 	return (
 		<Card className={classes.card}>
@@ -51,17 +53,14 @@ export const BlogCard = ({ classes }) => {
 					{shareOpen ? <CloseIcon /> : <ShareIcon />}
 				</Fab>
 				<div className={classes.tagContainer}>
-					<Link to="/">React</Link>
+					<Link to="/">{tag || 'React'}</Link>
 					<time>1st January</time>
 				</div>
 				<Typography gutterBottom variant="h5" component="h3">
-					<Link to="/">Intro to React JS</Link>
+					<Link to={`/${slug}`}>{title || 'Intro to React JS'}</Link>
 				</Typography>
 				<Typography variant="body2" color="textSecondary" component="p">
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit
-					molestias deleniti in dicta quasi, rerum tempora corrupti dolor
-					voluptatibus, assumenda, illum quod ut quidem iusto possimus sequi
-					saepe autem beatae!
+					{description || ''}
 				</Typography>
 			</CardContent>
 		</Card>
@@ -75,6 +74,12 @@ BlogCard.propTypes = {
 		fabButton: PropTypes.string.isRequired,
 		shareContainer: PropTypes.string.isRequired,
 	}).isRequired,
+	attributes: PropTypes.shape({
+		title: PropTypes.string,
+		slug: PropTypes.string,
+		tag: PropTypes.string,
+		description: PropTypes.string,
+	}),
 };
 
 export default withStyles(styles)(BlogCard);

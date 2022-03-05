@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import {
@@ -19,9 +19,19 @@ import styles from './styles';
 const Blog = ({ classes }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [tags, setTags] = useState([]);
+	const [posts, setPosts] = useState([]);
 	const [t] = useTranslation();
 	const theme = useTheme();
 	const matches = useMediaQuery(theme.breakpoints.up('tablet'));
+
+	useEffect(() => {
+		fetch('http://localhost:5000/articles')
+			.then((response) => response.json())
+			.then((data) => {
+				setPosts(data);
+				setIsLoading(false);
+			});
+	}, []);
 
 	const addOrRemoveTag = (tag) => {
 		const index = tags.findIndex((item) => item === tag);
@@ -103,16 +113,16 @@ const Blog = ({ classes }) => {
 				/>
 			</div>
 			<section className={classes.articlesContainer}>
-				{/* {isLoading && (
+				{isLoading && (
 					<div className={classes.loading}>
 						<CircularProgress size={80} />
 						<h2>{t('blog.searching')}</h2>
 					</div>
-				)} */}
+				)}
 
-				{new Array(9).fill(' ').map((item, index) => (
+				{posts.map((post, index) => (
 					<article key={index}>
-						<BlogCard />
+						<BlogCard attributes={post.attributes} />
 					</article>
 				))}
 
@@ -123,9 +133,9 @@ const Blog = ({ classes }) => {
 						{t('blog.noArticles')} <span>"this is a long term search"</span>
 					</p>
 				</div> */}
-				<div id="pagination">
+				{/* <div id="pagination">
 					<Pagination count={10} color="primary" size="large" />
-				</div>
+				</div> */}
 			</section>
 		</main>
 	);
