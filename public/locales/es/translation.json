@@ -60,6 +60,10 @@
 		"searchResults": "Resultados de búsqueda",
 		"noResults": "No hay resultados",
 		"noArticles": "No se encontraron resultados para ",
-		"searching": "Buscando..."
+		"searching": "Buscando...",
+		"searchPlaceholder": "Buscar un artículo",
+		"result": "resultado",
+		"results": "resultados",
+		"search": "Buscar"
 	}
 }

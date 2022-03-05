@@ -24,7 +24,6 @@ const Blog = ({ classes }) => {
 	const matches = useMediaQuery(theme.breakpoints.up('tablet'));
 
 	const addOrRemoveTag = (tag) => {
-		console.log(tag);
 		const index = tags.findIndex((item) => item === tag);
 
 		if (index >= 0) {
@@ -51,11 +50,11 @@ const Blog = ({ classes }) => {
 						<IconButton aria-label="search" color="primary">
 							<SearchIcon />
 						</IconButton>
-						<input type="text" placeholder="Search an article" />
-						<h6>123 results</h6>
+						<input type="text" placeholder={t('blog.searchPlaceholder')} />
+						<h6>123 {t('blog.results')}</h6>
 						{matches && (
 							<Button variant="contained" color="primary" size="large">
-								Search
+								{t('blog.search')}
 							</Button>
 						)}
 					</form>
@@ -67,7 +66,7 @@ const Blog = ({ classes }) => {
 						color="primary"
 						size="large"
 					>
-						Search
+						{t('blog.search')}
 					</Button>
 				)}
 			</div>

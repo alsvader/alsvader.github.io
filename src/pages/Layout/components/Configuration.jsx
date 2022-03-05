@@ -11,7 +11,6 @@ const Configuration = ({ children }) => {
 				? true
 				: false
 	);
-	console.log('isConfLoaded', isConfLoaded);
 
 	useEffect(() => {
 		dispatch(loadConfiguration);
