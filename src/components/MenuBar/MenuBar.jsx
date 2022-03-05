@@ -132,7 +132,7 @@ MenuBar.propTypes = {
 	languageLabel: PropTypes.string.isRequired,
 	setMenuItemSelected: PropTypes.func.isRequired,
 	setLanguageLabel: PropTypes.func.isRequired,
-	setLanguageCode: PropTypes.string.isRequired,
+	setLanguageCode: PropTypes.func.isRequired,
 	openDrawer: PropTypes.func.isRequired,
 };
 

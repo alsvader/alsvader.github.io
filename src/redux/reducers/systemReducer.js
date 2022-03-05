@@ -2,8 +2,8 @@ import { SYSTEM_TYPES } from '../types';
 
 const initialState = {
 	languageCode: null,
-	languageMenuItemSelected: 0,
-	languageLabel: 'languages.spanish',
+	languageMenuItemSelected: null,
+	languageLabel: null,
 	drawerOpen: false,
 };
 
