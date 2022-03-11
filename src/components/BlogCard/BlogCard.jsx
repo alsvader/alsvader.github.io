@@ -79,7 +79,7 @@ BlogCard.propTypes = {
 		slug: PropTypes.string,
 		tag: PropTypes.string,
 		description: PropTypes.string,
-	}),
+	}).isRequired,
 };
 
 export default withStyles(styles)(BlogCard);

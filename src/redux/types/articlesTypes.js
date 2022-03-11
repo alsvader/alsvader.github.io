@@ -1,0 +1,6 @@
+const TYPES = {
+	GET_ALL_ARTICLES: 'GET_ALL_ARTICLES',
+	SET_ALL_ARTICLES: 'SET_ALL_ARTICLES',
+};
+
+export default TYPES;
