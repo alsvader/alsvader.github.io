@@ -30,6 +30,9 @@ const Blog = ({ classes }) => {
 			.then((data) => {
 				setPosts(data);
 				setIsLoading(false);
+			})
+			.catch((error) => {
+				setIsLoading(false);
 			});
 	}, []);
 

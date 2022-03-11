@@ -1,6 +1,7 @@
 const styles = (theme) => ({
 	card: {
 		position: 'relative',
+		minHeight: '470px',
 		'& h3': {
 			fontSize: '1.5rem',
 			fontWeight: 700,
@@ -29,27 +30,27 @@ const styles = (theme) => ({
 	},
 	fabButton: {
 		position: 'absolute',
-		top: '30%',
+		top: '24%',
 		right: '5%',
 		[theme.breakpoints.up('md')]: {
-			top: '29%',
+			top: '25%',
 		},
 		[theme.breakpoints.up('lg')]: {
-			top: '32%',
+			top: '25%',
 		},
 	},
 	shareContainer: {
 		display: 'flex',
 		flexDirection: 'row',
 		position: 'absolute',
-		right: '23%',
-		top: '30%',
+		right: '24%',
+		top: '24%',
 		[theme.breakpoints.up('md')]: {
-			top: '29%',
-			right: '25%',
+			top: '25%',
+			right: '19%',
 		},
 		[theme.breakpoints.up('lg')]: {
-			top: '32%',
+			top: '25%',
 			right: '22%',
 		},
 		'& button:last-child': {
