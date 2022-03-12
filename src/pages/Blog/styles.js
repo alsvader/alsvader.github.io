@@ -118,6 +118,10 @@ const styles = (theme) => ({
 			justifyContent: 'center',
 			marginTop: '1rem',
 			marginBottom: '1rem',
+			width: '100%',
+			'& .MuiPagination-ul': {
+				justifyContent: 'center',
+			},
 		},
 	},
 	notFoundContainer: {

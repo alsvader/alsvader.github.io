@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -69,7 +69,11 @@ const Blog = ({ classes }) => {
 					</article>
 				))}
 				<div id="pagination">
-					<Pagination count={10} color="primary" size="large" />
+					<Pagination
+						count={Math.ceil(posts.length / 9)}
+						color="primary"
+						size="large"
+					/>
 				</div>
 			</>
 		);
