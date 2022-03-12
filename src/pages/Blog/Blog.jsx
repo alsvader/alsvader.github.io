@@ -18,7 +18,7 @@ import { BlogCard } from '../../components';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
-	const { posts, noDataFound, termSearch } = useSelector(
+	const { posts, articleTags, noDataFound, termSearch } = useSelector(
 		({ articles }) => articles
 	);
 	const [isLoading, setIsLoading] = useState(false);
@@ -115,36 +115,14 @@ const Blog = ({ classes }) => {
 				)}
 			</div>
 			<div className={classes.chipContainer}>
-				<Chip
-					label="React"
-					color={tags.includes('React') ? 'primary' : 'default'}
-					onClick={() => addOrRemoveTag('React')}
-				/>
-				<Chip
-					label="javascript"
-					color={tags.includes('javascript') ? 'primary' : 'default'}
-					onClick={() => addOrRemoveTag('javascript')}
-				/>
-				<Chip
-					label="NodeJs"
-					color={tags.includes('NodeJs') ? 'primary' : 'default'}
-					onClick={() => addOrRemoveTag('NodeJs')}
-				/>
-				<Chip
-					label="Gatsby"
-					color={tags.includes('Gatsby') ? 'primary' : 'default'}
-					onClick={() => addOrRemoveTag('Gatsby')}
-				/>
-				<Chip
-					label="React native"
-					color={tags.includes('React native') ? 'primary' : 'default'}
-					onClick={() => addOrRemoveTag('React native')}
-				/>
-				<Chip
-					label="Material UI"
-					color={tags.includes('Material UI') ? 'primary' : 'default'}
-					onClick={() => addOrRemoveTag('Material UI')}
-				/>
+				{articleTags.map((articleTag) => (
+					<Chip
+						key={articleTag}
+						label={articleTag}
+						color={tags.includes(articleTag) ? 'primary' : 'default'}
+						onClick={() => addOrRemoveTag(articleTag)}
+					/>
+				))}
 			</div>
 			<section className={classes.articlesContainer}>{printContent()}</section>
 		</main>

@@ -18,6 +18,7 @@ const styles = (theme) => ({
 	tagContainer: {
 		display: 'flex',
 		flexDirection: 'row',
+		textTransform: 'uppercase',
 		'& a': {
 			color: theme.palette.primary.main,
 			fontWeight: 700,

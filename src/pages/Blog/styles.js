@@ -80,6 +80,7 @@ const styles = (theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		flexWrap: 'wrap',
+		textTransform: 'uppercase',
 		'& > *': {
 			margin: theme.spacing(0.5),
 		},

@@ -27,7 +27,10 @@ export const loadConfiguration = async (dispatch, getState) => {
 		);
 
 		const articles = await response.json();
+		const tags = articles.map((article) => article.attributes.tag);
+
 		dispatch(ARTICLES_ACTIONS.setAllArticles(articles));
+		dispatch(ARTICLES_ACTIONS.setTags(tags));
 	} catch (error) {
 		console.log(error);
 	}
