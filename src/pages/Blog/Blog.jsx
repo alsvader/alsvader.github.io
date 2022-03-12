@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
 	Chip,
 	Paper,
@@ -15,17 +15,23 @@ import SearchIcon from '@material-ui/icons/Search';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles, useTheme } from '@material-ui/core/styles';
 import { BlogCard } from '../../components';
+import { ARTICLES_ACTIONS } from '../../redux/actions';
+import { searchArticles } from '../../redux/middleware/configuration';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
 	const { posts, articleTags, noDataFound, termSearch } = useSelector(
 		({ articles }) => articles
 	);
+	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false);
 	const [tags, setTags] = useState([]);
 	const [t] = useTranslation();
 	const theme = useTheme();
 	const matches = useMediaQuery(theme.breakpoints.up('tablet'));
+
+	const newString = termSearch.split();
+	console.log(newString);
 
 	const addOrRemoveTag = (tag) => {
 		const index = tags.findIndex((item) => item === tag);
@@ -79,6 +85,11 @@ const Blog = ({ classes }) => {
 		);
 	};
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		dispatch(searchArticles());
+	};
+
 	return (
 		<main className={classes.container}>
 			<nav>
@@ -90,14 +101,25 @@ const Blog = ({ classes }) => {
 			</nav>
 			<div className={classes.searchBarContainer}>
 				<Paper elevation={3}>
-					<form>
+					<form onSubmit={handleSubmit}>
 						<IconButton aria-label="search" color="primary">
 							<SearchIcon />
 						</IconButton>
-						<input type="text" placeholder={t('blog.searchPlaceholder')} />
+						<input
+							type="text"
+							placeholder={t('blog.searchPlaceholder')}
+							onChange={(e) =>
+								dispatch(ARTICLES_ACTIONS.setTermSearch(e.target.value))
+							}
+						/>
 						<h6>123 {t('blog.results')}</h6>
 						{matches && (
-							<Button variant="contained" color="primary" size="large">
+							<Button
+								type="submit"
+								variant="contained"
+								color="primary"
+								size="large"
+							>
 								{t('blog.search')}
 							</Button>
 						)}

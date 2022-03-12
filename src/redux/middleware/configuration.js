@@ -35,3 +35,27 @@ export const loadConfiguration = async (dispatch, getState) => {
 		console.log(error);
 	}
 };
+
+export const searchArticles = () => (dispath, getState) => {
+	const {
+		articles: { data, termSearch },
+	} = getState();
+
+	if (!termSearch) {
+		dispath(ARTICLES_ACTIONS.setArticles(data));
+		dispath(ARTICLES_ACTIONS.setNoDataFound(false));
+	}
+
+	const articlesFiltered = data.filter((article) =>
+		article.attributes.title.toLowerCase().includes(termSearch.toLowerCase())
+	);
+
+	console.log(articlesFiltered);
+	dispath(ARTICLES_ACTIONS.setArticles(articlesFiltered));
+
+	if (articlesFiltered.length === 0) {
+		dispath(ARTICLES_ACTIONS.setNoDataFound(true));
+	} else {
+		dispath(ARTICLES_ACTIONS.setNoDataFound(false));
+	}
+};
