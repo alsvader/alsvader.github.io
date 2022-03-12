@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import {
 	Chip,
 	Paper,
@@ -17,24 +18,14 @@ import { BlogCard } from '../../components';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
-	const [isLoading, setIsLoading] = useState(true);
+	const { posts, noDataFound, termSearch } = useSelector(
+		({ articles }) => articles
+	);
+	const [isLoading, setIsLoading] = useState(false);
 	const [tags, setTags] = useState([]);
-	const [posts, setPosts] = useState([]);
 	const [t] = useTranslation();
 	const theme = useTheme();
 	const matches = useMediaQuery(theme.breakpoints.up('tablet'));
-
-	useEffect(() => {
-		fetch('http://localhost:5000/articles')
-			.then((response) => response.json())
-			.then((data) => {
-				setPosts(data);
-				setIsLoading(false);
-			})
-			.catch((error) => {
-				setIsLoading(false);
-			});
-	}, []);
 
 	const addOrRemoveTag = (tag) => {
 		const index = tags.findIndex((item) => item === tag);
@@ -46,6 +37,42 @@ const Blog = ({ classes }) => {
 		}
 
 		setTags([...tags, tag]);
+	};
+
+	const printContent = () => {
+		if (isLoading) {
+			return (
+				<div className={classes.loading}>
+					<CircularProgress size={80} />
+					<h2>{t('blog.searching')}</h2>
+				</div>
+			);
+		}
+
+		if (noDataFound) {
+			return (
+				<div className={classes.notFoundContainer}>
+					<WarningIcon color="primary" />
+					<h2>{t('blog.noResults')}</h2>
+					<p>
+						{t('blog.noArticles')} <span>"{termSearch}"</span>
+					</p>
+				</div>
+			);
+		}
+
+		return (
+			<>
+				{posts.map((post, index) => (
+					<article key={index}>
+						<BlogCard attributes={post.attributes} />
+					</article>
+				))}
+				<div id="pagination">
+					<Pagination count={10} color="primary" size="large" />
+				</div>
+			</>
+		);
 	};
 
 	return (
@@ -115,31 +142,7 @@ const Blog = ({ classes }) => {
 					onClick={() => addOrRemoveTag('Material UI')}
 				/>
 			</div>
-			<section className={classes.articlesContainer}>
-				{isLoading && (
-					<div className={classes.loading}>
-						<CircularProgress size={80} />
-						<h2>{t('blog.searching')}</h2>
-					</div>
-				)}
-
-				{posts.map((post, index) => (
-					<article key={index}>
-						<BlogCard attributes={post.attributes} />
-					</article>
-				))}
-
-				{/* <div className={classes.notFoundContainer}>
-					<WarningIcon color="primary" />
-					<h2>{t('blog.noResults')}</h2>
-					<p>
-						{t('blog.noArticles')} <span>"this is a long term search"</span>
-					</p>
-				</div> */}
-				{/* <div id="pagination">
-					<Pagination count={10} color="primary" size="large" />
-				</div> */}
-			</section>
+			<section className={classes.articlesContainer}>{printContent()}</section>
 		</main>
 	);
 };

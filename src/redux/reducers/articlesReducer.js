@@ -2,6 +2,9 @@ import { ARTICLES_TYPES } from '../types';
 
 const initialState = {
 	data: [],
+	posts: [],
+	termSearch: '',
+	noDataFound: false,
 };
 
 export default function articlesReducer(
@@ -10,7 +13,7 @@ export default function articlesReducer(
 ) {
 	switch (type) {
 		case ARTICLES_TYPES.SET_ALL_ARTICLES:
-			return { ...state, data: payload };
+			return { ...state, data: payload, posts: payload };
 		default:
 			return { ...state };
 	}
