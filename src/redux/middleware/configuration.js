@@ -27,6 +27,12 @@ export const loadConfiguration = async (dispatch, getState) => {
 		);
 
 		const articles = await response.json();
+
+		articles.sort(
+			(a, b) =>
+				new Date(b.attributes.published) - new Date(a.attributes.published)
+		);
+
 		const tags = articles.map((article) => article.attributes.tag);
 
 		dispatch(ARTICLES_ACTIONS.setAllArticles(articles));
