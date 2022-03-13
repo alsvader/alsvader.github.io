@@ -27,8 +27,9 @@ const Blog = ({ classes }) => {
 	const { posts, articleTags, noDataFound, termSearch } = useSelector(
 		({ articles }) => articles
 	);
+	const { isLoading } = useSelector(({ system }) => system);
 	const dispatch = useDispatch();
-	const [isLoading, setIsLoading] = useState(false);
+	// const [isLoading, setIsLoading] = useState(false);
 	const [tags, setTags] = useState([]);
 	const [term, setTerm] = useState('');
 	const [t] = useTranslation();
@@ -136,7 +137,12 @@ const Blog = ({ classes }) => {
 							placeholder={t('blog.searchPlaceholder')}
 							onChange={(e) => setTerm(e.target.value)}
 						/>
-						<h6>123 {t('blog.results')}</h6>
+						{termSearch && (
+							<h6>
+								{posts.length}{' '}
+								{posts.length > 1 ? t('blog.results') : t('blog.result')}
+							</h6>
+						)}
 						{matches && (
 							<Button
 								type="submit"

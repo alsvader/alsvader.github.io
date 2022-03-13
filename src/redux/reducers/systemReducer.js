@@ -5,6 +5,7 @@ const initialState = {
 	languageMenuItemSelected: null,
 	languageLabel: null,
 	drawerOpen: false,
+	isLoading: false,
 };
 
 export default function systemReducer(state = initialState, { type, payload }) {
@@ -17,6 +18,8 @@ export default function systemReducer(state = initialState, { type, payload }) {
 			return { ...state, drawerOpen: payload };
 		case SYSTEM_TYPES.SET_LANGUAGE_CODE:
 			return { ...state, languageCode: payload };
+		case SYSTEM_TYPES.SET_IS_LOADING:
+			return { ...state, isLoading: payload };
 		default:
 			return { ...state };
 	}

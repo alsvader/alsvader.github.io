@@ -17,6 +17,10 @@ const ACTIONS = {
 		type: SYSTEM_TYPES.SET_DRAWER_OPEN,
 		payload: open,
 	}),
+	setIsLoading: (isLoading) => ({
+		type: SYSTEM_TYPES.SET_IS_LOADING,
+		payload: isLoading,
+	}),
 };
 
 export default ACTIONS;

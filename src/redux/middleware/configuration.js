@@ -47,11 +47,13 @@ export const searchArticles = (term) => (dispatch, getState) => {
 		articles: { data },
 	} = getState();
 
+	dispatch(SYSTEM_ACTIONS.setIsLoading(true));
 	dispatch(ARTICLES_ACTIONS.setTermSearch(term));
 
 	if (!term) {
 		dispatch(ARTICLES_ACTIONS.setArticles(data));
 		dispatch(ARTICLES_ACTIONS.setNoDataFound(false));
+		dispatch(SYSTEM_ACTIONS.setIsLoading(false));
 		return;
 	}
 
@@ -66,6 +68,8 @@ export const searchArticles = (term) => (dispatch, getState) => {
 	} else {
 		dispatch(ARTICLES_ACTIONS.setNoDataFound(false));
 	}
+
+	dispatch(SYSTEM_ACTIONS.setIsLoading(false));
 };
 
 export const searchByTags = (tags) => (dispatch, getState) => {
