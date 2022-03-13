@@ -15,7 +15,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles, useTheme } from '@material-ui/core/styles';
 import { BlogCard } from '../../components';
-import { ARTICLES_ACTIONS } from '../../redux/actions';
 import { searchArticles } from '../../redux/middleware/configuration';
 import styles from './styles';
 
@@ -26,12 +25,10 @@ const Blog = ({ classes }) => {
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false);
 	const [tags, setTags] = useState([]);
+	const [term, setTerm] = useState('');
 	const [t] = useTranslation();
 	const theme = useTheme();
 	const matches = useMediaQuery(theme.breakpoints.up('tablet'));
-
-	const newString = termSearch.split();
-	console.log(newString);
 
 	const addOrRemoveTag = (tag) => {
 		const index = tags.findIndex((item) => item === tag);
@@ -87,7 +84,7 @@ const Blog = ({ classes }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		dispatch(searchArticles());
+		dispatch(searchArticles(term));
 	};
 
 	return (
@@ -108,9 +105,7 @@ const Blog = ({ classes }) => {
 						<input
 							type="text"
 							placeholder={t('blog.searchPlaceholder')}
-							onChange={(e) =>
-								dispatch(ARTICLES_ACTIONS.setTermSearch(e.target.value))
-							}
+							onChange={(e) => setTerm(e.target.value)}
 						/>
 						<h6>123 {t('blog.results')}</h6>
 						{matches && (
