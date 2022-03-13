@@ -15,7 +15,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles, useTheme } from '@material-ui/core/styles';
 import { BlogCard } from '../../components';
-import { searchArticles } from '../../redux/middleware/configuration';
+import {
+	searchArticles,
+	searchByTags,
+} from '../../redux/middleware/configuration';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
@@ -36,10 +39,12 @@ const Blog = ({ classes }) => {
 		if (index >= 0) {
 			tags.splice(index, 1);
 			setTags([...tags]);
+			dispatch(searchByTags(tags));
 			return;
 		}
 
 		setTags([...tags, tag]);
+		dispatch(searchByTags([...tags, tag]));
 	};
 
 	const printContent = () => {

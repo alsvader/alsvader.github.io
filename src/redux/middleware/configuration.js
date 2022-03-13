@@ -36,16 +36,16 @@ export const loadConfiguration = async (dispatch, getState) => {
 	}
 };
 
-export const searchArticles = (term) => (dispath, getState) => {
+export const searchArticles = (term) => (dispatch, getState) => {
 	const {
 		articles: { data },
 	} = getState();
 
-	dispath(ARTICLES_ACTIONS.setTermSearch(term));
+	dispatch(ARTICLES_ACTIONS.setTermSearch(term));
 
 	if (!term) {
-		dispath(ARTICLES_ACTIONS.setArticles(data));
-		dispath(ARTICLES_ACTIONS.setNoDataFound(false));
+		dispatch(ARTICLES_ACTIONS.setArticles(data));
+		dispatch(ARTICLES_ACTIONS.setNoDataFound(false));
 		return;
 	}
 
@@ -53,11 +53,30 @@ export const searchArticles = (term) => (dispath, getState) => {
 		article.attributes.title.toLowerCase().includes(term.toLowerCase())
 	);
 
-	dispath(ARTICLES_ACTIONS.setArticles(articlesFiltered));
+	dispatch(ARTICLES_ACTIONS.setArticles(articlesFiltered));
 
 	if (articlesFiltered.length === 0) {
-		dispath(ARTICLES_ACTIONS.setNoDataFound(true));
+		dispatch(ARTICLES_ACTIONS.setNoDataFound(true));
 	} else {
-		dispath(ARTICLES_ACTIONS.setNoDataFound(false));
+		dispatch(ARTICLES_ACTIONS.setNoDataFound(false));
 	}
+};
+
+export const searchByTags = (tags) => (dispatch, getState) => {
+	const {
+		articles: { data },
+	} = getState();
+
+	if (tags.length === 0) {
+		dispatch(ARTICLES_ACTIONS.setArticles(data));
+		return;
+	}
+
+	tags = tags.map((tag) => tag.toLowerCase());
+
+	const articlesFiltered = data.filter((article) =>
+		tags.includes(article.attributes.tag.toLowerCase())
+	);
+
+	dispatch(ARTICLES_ACTIONS.setArticles(articlesFiltered));
 };
