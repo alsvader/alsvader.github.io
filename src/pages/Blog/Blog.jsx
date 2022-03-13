@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import {
 	Chip,
 	Paper,
@@ -19,6 +20,7 @@ import {
 	searchArticles,
 	searchByTags,
 } from '../../redux/middleware/configuration';
+import { ARTICLES_ACTIONS } from '../../redux/actions';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
@@ -33,6 +35,8 @@ const Blog = ({ classes }) => {
 	const theme = useTheme();
 	const matches = useMediaQuery(theme.breakpoints.up('tablet'));
 
+	const { search } = useLocation();
+
 	const addOrRemoveTag = (tag) => {
 		const index = tags.findIndex((item) => item === tag);
 
@@ -46,6 +50,26 @@ const Blog = ({ classes }) => {
 		setTags([...tags, tag]);
 		dispatch(searchByTags([...tags, tag]));
 	};
+
+	useEffect(() => {
+		const searchParams = new URLSearchParams(search);
+		if (searchParams.has('tag')) {
+			const tagAvailable = articleTags.find(
+				(articleTag) =>
+					articleTag.toLowerCase() === searchParams.get('tag').toLowerCase()
+			);
+
+			if (tagAvailable) {
+				addOrRemoveTag(tagAvailable);
+			}
+		}
+	}, [search]);
+
+	useEffect(() => {
+		return () => {
+			dispatch(ARTICLES_ACTIONS.setTermSearch(''));
+		};
+	}, []);
 
 	const printContent = () => {
 		if (isLoading) {
