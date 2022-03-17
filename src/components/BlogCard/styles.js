@@ -43,6 +43,7 @@ const styles = (theme) => ({
 	shareContainer: {
 		display: 'flex',
 		flexDirection: 'row',
+		gap: '10px',
 		position: 'absolute',
 		right: '24%',
 		top: '24%',
