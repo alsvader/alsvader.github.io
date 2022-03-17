@@ -67,7 +67,9 @@ const Blog = ({ classes }) => {
 
 	useEffect(() => {
 		return () => {
+			console.log('dentro del unmount');
 			dispatch(ARTICLES_ACTIONS.setTermSearch(''));
+			dispatch(searchArticles(''));
 		};
 	}, []);
 
