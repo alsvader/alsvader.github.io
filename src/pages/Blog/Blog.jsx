@@ -101,13 +101,15 @@ const Blog = ({ classes }) => {
 						<BlogCard attributes={post.attributes} />
 					</article>
 				))}
-				<div id="pagination">
-					<Pagination
-						count={Math.ceil(posts.length / 9)}
-						color="primary"
-						size="large"
-					/>
-				</div>
+				{posts.length > 0 && (
+					<div id="pagination">
+						<Pagination
+							count={Math.ceil(posts.length / 9)}
+							color="primary"
+							size="large"
+						/>
+					</div>
+				)}
 			</>
 		);
 	};

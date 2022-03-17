@@ -22,6 +22,7 @@ export const BlogCard = ({ classes, attributes }) => {
 	const openShare = () => setShareOpen(!shareOpen);
 
 	const { title, slug, tag, description } = attributes;
+	const baseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
 	return (
 		<Card className={classes.card}>
@@ -35,10 +36,24 @@ export const BlogCard = ({ classes, attributes }) => {
 			<CardContent>
 				<Fade in={shareOpen} timeout={1000}>
 					<div className={classes.shareContainer}>
-						<Fab color="primary" size="medium">
+						<Fab
+							color="primary"
+							size="medium"
+							href={`https://www.facebook.com/sharer.php?u=${encodeURIComponent(
+								baseUrl + '/' + slug
+							)}&display=popup`}
+							target="_blank"
+						>
 							<FacebookIcon />
 						</Fab>
-						<Fab color="primary" size="medium">
+						<Fab
+							color="primary"
+							size="medium"
+							href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+								baseUrl + '/' + slug
+							)}&via=als_link`}
+							target="_blank"
+						>
 							<TwitterIcon />
 						</Fab>
 					</div>
