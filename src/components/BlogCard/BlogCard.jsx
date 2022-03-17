@@ -16,12 +16,12 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import styles from './styles';
 
-export const BlogCard = ({ classes, attributes }) => {
+export const BlogCard = ({ classes, attributes, languageCode }) => {
 	const [shareOpen, setShareOpen] = useState(false);
 
 	const openShare = () => setShareOpen(!shareOpen);
 
-	const { title, slug, tag, description } = attributes;
+	const { title, slug, tag, description, published } = attributes;
 	const baseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
 	return (
@@ -69,7 +69,9 @@ export const BlogCard = ({ classes, attributes }) => {
 				</Fab>
 				<div className={classes.tagContainer}>
 					<Link to={`/blog?tag=${tag}`}>{tag || 'React'}</Link>
-					<time>1st January</time>
+					<time>
+						{new Intl.DateTimeFormat(languageCode).format(new Date(published))}
+					</time>
 				</div>
 				<Typography gutterBottom variant="h5" component="h3">
 					<Link to={`/${slug}`}>{title || 'Intro to React JS'}</Link>
@@ -95,6 +97,7 @@ BlogCard.propTypes = {
 		tag: PropTypes.string,
 		description: PropTypes.string,
 	}).isRequired,
+	languageCode: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(BlogCard);

@@ -27,7 +27,7 @@ const Blog = ({ classes }) => {
 	const { posts, articleTags, noDataFound, termSearch } = useSelector(
 		({ articles }) => articles
 	);
-	const { isLoading } = useSelector(({ system }) => system);
+	const { isLoading, languageCode } = useSelector(({ system }) => system);
 	const dispatch = useDispatch();
 	// const [isLoading, setIsLoading] = useState(false);
 	const [tags, setTags] = useState([]);
@@ -98,7 +98,10 @@ const Blog = ({ classes }) => {
 			<>
 				{posts.map((post, index) => (
 					<article key={index}>
-						<BlogCard attributes={post.attributes} />
+						<BlogCard
+							attributes={post.attributes}
+							languageCode={languageCode}
+						/>
 					</article>
 				))}
 				{posts.length > 0 && (
