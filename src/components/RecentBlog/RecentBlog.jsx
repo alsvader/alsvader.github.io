@@ -20,7 +20,7 @@ export const RecentBlog = ({ classes }) => {
 				<Link to="/blog">View all</Link>
 			</div>
 			<Grid container spacing={4}>
-				{posts.map((post, index) => (
+				{posts.slice(0, 3).map((post, index) => (
 					<Grid key={index} item xs={12} sm={6} md={4}>
 						<BlogCard
 							attributes={post.attributes}
