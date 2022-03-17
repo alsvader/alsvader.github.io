@@ -33,7 +33,8 @@ export const loadConfiguration = async (dispatch, getState) => {
 				new Date(b.attributes.published) - new Date(a.attributes.published)
 		);
 
-		const tags = articles.map((article) => article.attributes.tag);
+		let tags = articles.map((article) => article.attributes.tag.toLowerCase());
+		tags = [...new Set(tags)];
 
 		dispatch(ARTICLES_ACTIONS.setAllArticles(articles));
 		dispatch(ARTICLES_ACTIONS.setTags(tags));
