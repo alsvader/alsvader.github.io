@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
 import { BlogCard } from '../';
@@ -9,6 +10,8 @@ import styles from './styles';
 
 export const RecentBlog = ({ classes }) => {
 	const [t] = useTranslation();
+	const { posts } = useSelector(({ articles }) => articles);
+	const { languageCode } = useSelector(({ system }) => system);
 
 	return (
 		<Container className={classes.recentBlogContainer}>
@@ -17,9 +20,12 @@ export const RecentBlog = ({ classes }) => {
 				<Link to="/blog">View all</Link>
 			</div>
 			<Grid container spacing={4}>
-				{new Array(3).fill(' ').map((item, index) => (
+				{posts.map((post, index) => (
 					<Grid key={index} item xs={12} sm={6} md={4}>
-						<BlogCard />
+						<BlogCard
+							attributes={post.attributes}
+							languageCode={languageCode}
+						/>
 					</Grid>
 				))}
 			</Grid>

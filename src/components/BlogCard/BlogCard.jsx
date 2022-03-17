@@ -16,7 +16,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import styles from './styles';
 
-export const BlogCard = ({ classes, attributes, languageCode }) => {
+export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 	const [shareOpen, setShareOpen] = useState(false);
 
 	const openShare = () => setShareOpen(!shareOpen);

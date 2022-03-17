@@ -29,7 +29,6 @@ const Blog = ({ classes }) => {
 	);
 	const { isLoading, languageCode } = useSelector(({ system }) => system);
 	const dispatch = useDispatch();
-	// const [isLoading, setIsLoading] = useState(false);
 	const [tags, setTags] = useState([]);
 	const [term, setTerm] = useState('');
 	const [t] = useTranslation();
