@@ -68,7 +68,7 @@ export const BlogCard = ({ classes, attributes }) => {
 					{shareOpen ? <CloseIcon /> : <ShareIcon />}
 				</Fab>
 				<div className={classes.tagContainer}>
-					<Link to="/">{tag || 'React'}</Link>
+					<Link to={`/blog?tag=${tag}`}>{tag || 'React'}</Link>
 					<time>1st January</time>
 				</div>
 				<Typography gutterBottom variant="h5" component="h3">
