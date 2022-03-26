@@ -10,6 +10,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { withStyles } from '@material-ui/core/styles';
 import { Giscus } from '@giscus/react';
 import Profile from '../../assets/images/profile.jpg';
+import { CopyButton } from '../../components';
 import styles from './styles';
 
 const BlogDetails = ({ classes }) => {
@@ -24,11 +25,11 @@ const BlogDetails = ({ classes }) => {
 	} = process.env;
 
 	useEffect(() => {
-		fetch('http://localhost:5000/articles')
+		fetch('http://192.168.1.8:5000/articles')
 			.then((response) => response.json())
 			.then((articles) => {
 				const article = articles.find(
-					(article) => article.attributes.slug === slug
+					(article) => article.attributes.slug === slug,
 				);
 				setPost(article);
 			});
@@ -70,13 +71,16 @@ const BlogDetails = ({ classes }) => {
 								code({ node, inline, className, children, ...props }) {
 									const match = /language-(\w+)/.exec(className || '');
 									return !inline && match ? (
-										<SyntaxHighlighter
-											children={String(children).replace(/\n$/, '')}
-											style={a11yDark}
-											language={match[1]}
-											PreTag="div"
-											{...props}
-										/>
+										<>
+											<CopyButton data={children[0]} />
+											<SyntaxHighlighter
+												children={String(children).replace(/\n$/, '')}
+												style={a11yDark}
+												language={match[1]}
+												PreTag="div"
+												{...props}
+											/>
+										</>
 									) : (
 										<code className={className} {...props}>
 											{children}

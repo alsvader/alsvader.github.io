@@ -44,6 +44,29 @@ const styles = (theme) => ({
 					fontSize: '1.25rem',
 				},
 			},
+			'& pre': {
+				position: 'relative',
+				'& div': {
+					maxHeight: '500px',
+				},
+				'& span.copyCode': {
+					color: '#31ABAB',
+					visibility: 'hidden',
+					position: 'absolute',
+					opacity: 0,
+					right: 0,
+					transition: 'visibility 0s, opacity 0.5s linear',
+					'& svg': {
+						fontSize: '2rem',
+					},
+				},
+				'&:hover': {
+					'& span.copyCode': {
+						visibility: 'visible',
+						opacity: 1,
+					},
+				},
+			},
 		},
 		'& .comments': {
 			margin: '6rem 0',
