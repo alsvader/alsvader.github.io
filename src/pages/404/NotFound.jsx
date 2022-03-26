@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import NotFoundImage from '../../assets/images/not_found.jpg';
 import styles from './styles';
 
-const NotFound = ({ classes }) => {
+const NotFound = ({ classes, redirect, label }) => {
 	const [t] = useTranslation();
 	return (
 		<main className={classes.root}>
@@ -20,9 +20,9 @@ const NotFound = ({ classes }) => {
 						color="primary"
 						size="large"
 						component={RouterLink}
-						to="/"
+						to={redirect}
 					>
-						{t('notFound.backHome')}
+						{t(label)}
 					</Button>
 				</div>
 				<div>
@@ -33,10 +33,17 @@ const NotFound = ({ classes }) => {
 	);
 };
 
+NotFound.defaultProps = {
+	redirect: '/',
+	label: 'notFound.backHome',
+};
+
 NotFound.propTypes = {
 	classes: PropTypes.shape({
 		root: PropTypes.string.isRequired,
 	}).isRequired,
+	redirect: PropTypes.string,
+	label: PropTypes.string,
 };
 
 export default withStyles(styles)(NotFound);

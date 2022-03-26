@@ -10,13 +10,16 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { withStyles } from '@material-ui/core/styles';
 import { Giscus } from '@giscus/react';
 import Profile from '../../assets/images/profile.jpg';
-import { CopyButton } from '../../components';
+import { CopyButton, PageLoader } from '../../components';
+import NotFound from '../404/NotFound';
 import styles from './styles';
 
 const BlogDetails = ({ classes }) => {
 	const { slug } = useParams();
 	const [post, setPost] = useState(null);
+	const [notFound, setNotFound] = useState(false);
 	const languageCode = useSelector((state) => state.system.languageCode);
+	const posts = useSelector((state) => state.articles.data);
 	const {
 		REACT_APP_GISCUS_REPO,
 		REACT_APP_GISCUS_REPO_ID,
@@ -25,17 +28,24 @@ const BlogDetails = ({ classes }) => {
 	} = process.env;
 
 	useEffect(() => {
-		fetch('http://192.168.1.8:5000/articles')
-			.then((response) => response.json())
-			.then((articles) => {
-				const article = articles.find(
-					(article) => article.attributes.slug === slug,
-				);
-				setPost(article);
-			});
-	}, [slug]);
+		if (posts.length > 0) {
+			const postFound = posts.find(
+				(post) => post.attributes.slug === slug.trim(),
+			);
 
-	if (!post) return <h1>Loading...</h1>;
+			if (postFound) {
+				setPost(postFound);
+				return;
+			}
+
+			setNotFound(true);
+		}
+	}, [slug, posts]);
+
+	if (!post && !notFound) return <PageLoader />;
+
+	if (notFound)
+		return <NotFound redirect="/blog" label="blog.seeAllArticles" />;
 
 	return (
 		<main className={classes.container}>
@@ -109,6 +119,7 @@ const BlogDetails = ({ classes }) => {
 		</main>
 	);
 };
+
 BlogDetails.propTypes = {
 	classes: PropTypes.shape({
 		container: PropTypes.string.isRequired,
