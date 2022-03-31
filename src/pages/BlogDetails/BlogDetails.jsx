@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Avatar, IconButton } from '@material-ui/core';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -21,6 +22,7 @@ const BlogDetails = ({ classes }) => {
 	const [notFound, setNotFound] = useState(false);
 	const languageCode = useSelector((state) => state.system.languageCode);
 	const posts = useSelector((state) => state.articles.data);
+	const [t] = useTranslation();
 	const {
 		REACT_APP_GISCUS_REPO,
 		REACT_APP_GISCUS_REPO_ID,
@@ -75,7 +77,11 @@ const BlogDetails = ({ classes }) => {
 							<IconButton aria-label="time to read" color="primary">
 								<MenuBookIcon />
 							</IconButton>
-							<span>10 min read</span>
+							<span>
+								{`${(post.body.split(' ').length / 155).toFixed(0)} ${t(
+									'blog.timeToRead',
+								)}`}
+							</span>
 						</div>
 					</div>
 				</div>
