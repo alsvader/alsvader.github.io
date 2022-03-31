@@ -32,6 +32,7 @@ export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 				height="140"
 				image={`${constants.MEDIA_URI}${imageCover}`}
 				title={title}
+				loading="lazy"
 			/>
 			<CardContent>
 				<Fade in={shareOpen} timeout={1000}>

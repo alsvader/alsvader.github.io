@@ -67,6 +67,17 @@ const styles = (theme) => ({
 					},
 				},
 			},
+			'& img': {
+				width: '100%',
+				[theme.breakpoints.up('tablet')]: {
+					marginLeft: '5%',
+					width: '90%',
+				},
+				[theme.breakpoints.up('laptop')]: {
+					marginLeft: '15%',
+					width: '70%',
+				},
+			},
 		},
 		'& .comments': {
 			margin: '6rem 0',

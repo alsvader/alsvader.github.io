@@ -9,9 +9,10 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { withStyles } from '@material-ui/core/styles';
 import { Giscus } from '@giscus/react';
-import Profile from '../../assets/images/profile.jpg';
 import { CopyButton, PageLoader } from '../../components';
 import NotFound from '../404/NotFound';
+import { constants } from '../../utils/constants';
+import Profile from '../../assets/images/profile.jpg';
 import styles from './styles';
 
 const BlogDetails = ({ classes }) => {
@@ -47,13 +48,18 @@ const BlogDetails = ({ classes }) => {
 	if (notFound)
 		return <NotFound redirect="/blog" label="blog.seeAllArticles" />;
 
+	const {
+		attributes: { imageCover },
+	} = post;
+
 	return (
 		<main className={classes.container}>
 			<article>
 				<div className="header">
 					<img
-						src="https://repository-images.githubusercontent.com/192620780/3eb64180-586e-11ea-9178-b8a0245411b7"
+						src={`${constants.MEDIA_URI}${imageCover}`}
 						alt="intro to react js"
+						loading="lazy"
 					/>
 					<h1>{post.attributes.title}</h1>
 					<div className="meta">
@@ -78,7 +84,18 @@ const BlogDetails = ({ classes }) => {
 						<ReactMarkdown
 							children={post.body}
 							components={{
-								code({ node, inline, className, children, ...props }) {
+								img: ({ node, ...props }) => {
+									const { alt, src, title } = props;
+									return (
+										<img
+											src={`${constants.MEDIA_URI}${src}`}
+											alt={alt}
+											title={title}
+											loading="lazy"
+										/>
+									);
+								},
+								code: ({ node, inline, className, children, ...props }) => {
 									const match = /language-(\w+)/.exec(className || '');
 									return !inline && match ? (
 										<>
