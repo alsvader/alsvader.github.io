@@ -66,6 +66,7 @@
 		"results": "resultados",
 		"search": "Buscar",
 		"seeAllArticles": "see all articles",
-		"timeToRead": "min de lectura"
+		"timeToRead": "min de lectura",
+		"postedOn": "Publicado el"
 	}
 }

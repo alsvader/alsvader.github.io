@@ -8,6 +8,7 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
+import TodayIcon from '@material-ui/icons/Today';
 import { withStyles } from '@material-ui/core/styles';
 import { Giscus } from '@giscus/react';
 import { CopyButton, PageLoader } from '../../components';
@@ -63,7 +64,6 @@ const BlogDetails = ({ classes }) => {
 						alt="intro to react js"
 						loading="lazy"
 					/>
-					<h1>{post.attributes.title}</h1>
 					<div className="meta">
 						<div>
 							<Avatar
@@ -72,11 +72,13 @@ const BlogDetails = ({ classes }) => {
 								className={classes.avatarLarge}
 							/>
 						</div>
-						<div>
-							<span>{dates.toLocalDate(published, languageCode)}</span>
-							<IconButton aria-label="time to read" color="primary">
-								<MenuBookIcon />
-							</IconButton>
+						<div className="metaIconsContainer">
+							<span>
+								{`${t('blog.postedOn')} ${dates.toLocalDate(
+									published,
+									languageCode,
+								)}`}
+							</span>
 							<span>
 								{`${(post.body.split(' ').length / 155).toFixed(0)} ${t(
 									'blog.timeToRead',
@@ -84,6 +86,7 @@ const BlogDetails = ({ classes }) => {
 							</span>
 						</div>
 					</div>
+					<h1>{post.attributes.title}</h1>
 				</div>
 				<div className="content">
 					{post && (

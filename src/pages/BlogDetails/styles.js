@@ -17,18 +17,23 @@ const styles = (theme) => ({
 				width: '100%',
 			},
 			'& .meta': {
-				alignItems: 'center',
 				display: 'flex',
 				fontFamily: "'Inter', sans-serif",
 				fontWeight: 600,
-				flexDirection: 'column',
-				gap: '1rem',
+				flexDirection: 'row',
+				gap: 8,
 				justifyContent: 'center',
-				'& div:last-child > button': {
-					paddingTop: '5px !important',
-				},
-				[theme.breakpoints.up('tablet')]: {
-					flexDirection: 'row',
+				marginTop: '1rem',
+
+				'& .metaIconsContainer': {
+					display: 'flex',
+					color: '#474747',
+					flexDirection: 'column',
+					flexGrow: 1,
+
+					'& span:last-child': {
+						color: '#928e8e',
+					},
 				},
 			},
 		},
@@ -106,8 +111,8 @@ const styles = (theme) => ({
 		},
 	},
 	avatarLarge: {
-		height: theme.spacing(8),
-		width: theme.spacing(8),
+		height: theme.spacing(6),
+		width: theme.spacing(6),
 	},
 });
 
