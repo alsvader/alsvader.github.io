@@ -14,7 +14,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import CloseIcon from '@material-ui/icons/Close';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import { constants } from '../../utils/constants';
+import { constants, dates } from '../../utils/constants';
 import styles from './styles';
 
 export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
@@ -70,9 +70,7 @@ export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 				</Fab>
 				<div className={classes.tagContainer}>
 					<Link to={`/blog?tag=${tag}`}>{tag || 'React'}</Link>
-					<time>
-						{new Intl.DateTimeFormat(languageCode).format(new Date(published))}
-					</time>
+					<time>{dates.toLocalDate(published, languageCode)}</time>
 				</div>
 				<Typography gutterBottom variant="h5" component="h3">
 					<Link to={`/${slug}`}>{title || 'Intro to React JS'}</Link>

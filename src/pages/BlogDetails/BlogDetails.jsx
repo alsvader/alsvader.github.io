@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Giscus } from '@giscus/react';
 import { CopyButton, PageLoader } from '../../components';
 import NotFound from '../404/NotFound';
-import { constants } from '../../utils/constants';
+import { constants, dates } from '../../utils/constants';
 import Profile from '../../assets/images/profile.jpg';
 import styles from './styles';
 
@@ -49,7 +49,7 @@ const BlogDetails = ({ classes }) => {
 		return <NotFound redirect="/blog" label="blog.seeAllArticles" />;
 
 	const {
-		attributes: { imageCover },
+		attributes: { imageCover, published },
 	} = post;
 
 	return (
@@ -71,7 +71,7 @@ const BlogDetails = ({ classes }) => {
 							/>
 						</div>
 						<div>
-							<span>Jan 20, 2022</span>
+							<span>{dates.toLocalDate(published, languageCode)}</span>
 							<IconButton aria-label="time to read" color="primary">
 								<MenuBookIcon />
 							</IconButton>
