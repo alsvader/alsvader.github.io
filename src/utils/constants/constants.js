@@ -12,6 +12,10 @@ const BREAKPOINTS = {
 	xl: 1920,
 };
 
-const constants = { BREAKPOINTS };
+const BLOG_API = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+
+const MEDIA_URI = `${BLOG_API}/media/`;
+
+const constants = { BREAKPOINTS, BLOG_API, MEDIA_URI };
 
 export default constants;

@@ -14,6 +14,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import CloseIcon from '@material-ui/icons/Close';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import { constants } from '../../utils/constants';
 import styles from './styles';
 
 export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
@@ -21,17 +22,16 @@ export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 
 	const openShare = () => setShareOpen(!shareOpen);
 
-	const { title, slug, tag, description, published } = attributes;
-	const baseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+	const { title, slug, tag, description, published, imageCover } = attributes;
 
 	return (
 		<Card className={classes.card}>
 			<CardMedia
 				component="img"
-				alt="Test card"
+				alt={title}
 				height="140"
-				image="https://ms314006.github.io/static/b7a8f321b0bbc07ca9b9d22a7a505ed5/97b31/React.jpg"
-				title="Test Card"
+				image={`${constants.MEDIA_URI}${imageCover}`}
+				title={title}
 			/>
 			<CardContent>
 				<Fade in={shareOpen} timeout={1000}>
@@ -40,7 +40,7 @@ export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 							color="primary"
 							size="medium"
 							href={`https://www.facebook.com/sharer.php?u=${encodeURIComponent(
-								baseUrl + '/' + slug
+								constants.BLOG_API + '/' + slug,
 							)}&display=popup`}
 							target="_blank"
 						>
@@ -50,7 +50,7 @@ export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 							color="primary"
 							size="medium"
 							href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-								baseUrl + '/' + slug
+								constants.BLOG_API + '/' + slug,
 							)}&via=als_link`}
 							target="_blank"
 						>
