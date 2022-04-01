@@ -12,6 +12,7 @@ import { Giscus } from '@giscus/react';
 import { CopyButton, PageLoader } from '../../components';
 import NotFound from '../404/NotFound';
 import { constants, dates } from '../../utils/constants';
+import { scrollToTop } from '../../utils/scroll';
 import Profile from '../../assets/images/profile.jpg';
 import styles from './styles';
 
@@ -43,6 +44,10 @@ const BlogDetails = ({ classes }) => {
 			setNotFound(true);
 		}
 	}, [slug, posts]);
+
+	useEffect(() => {
+		scrollToTop();
+	}, []);
 
 	if (!post && !notFound) return <PageLoader />;
 

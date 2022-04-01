@@ -21,11 +21,12 @@ import {
 	searchByTags,
 } from '../../redux/middleware/configuration';
 import { ARTICLES_ACTIONS } from '../../redux/actions';
+import { scrollToTop } from '../../utils/scroll';
 import styles from './styles';
 
 const Blog = ({ classes }) => {
 	const { posts, articleTags, noDataFound, termSearch } = useSelector(
-		({ articles }) => articles
+		({ articles }) => articles,
 	);
 	const { isLoading, languageCode } = useSelector(({ system }) => system);
 	const dispatch = useDispatch();
@@ -56,7 +57,7 @@ const Blog = ({ classes }) => {
 		if (searchParams.has('tag')) {
 			const tagAvailable = articleTags.find(
 				(articleTag) =>
-					articleTag.toLowerCase() === searchParams.get('tag').toLowerCase()
+					articleTag.toLowerCase() === searchParams.get('tag').toLowerCase(),
 			);
 
 			if (tagAvailable) {
@@ -66,8 +67,8 @@ const Blog = ({ classes }) => {
 	}, [search]);
 
 	useEffect(() => {
+		scrollToTop();
 		return () => {
-			console.log('dentro del unmount');
 			dispatch(ARTICLES_ACTIONS.setTermSearch(''));
 			dispatch(searchArticles(''));
 		};
