@@ -39,15 +39,16 @@ const styles = (theme) => ({
 		},
 		'& .content': {
 			margin: '2.5rem 0',
+
+			color: '#111',
+			fontFamily: "'Inter', sans-serif",
+			fontSize: '1.125rem',
+			lineHeight: '2rem',
+			[theme.breakpoints.up('tablet')]: {
+				fontSize: '1.25rem',
+			},
 			'& p': {
-				color: '#111',
-				fontFamily: "'Inter', sans-serif",
-				fontSize: '1.125rem',
-				lineHeight: '2rem',
 				margin: '1.5rem 0',
-				[theme.breakpoints.up('tablet')]: {
-					fontSize: '1.25rem',
-				},
 			},
 			'& pre': {
 				position: 'relative',
