@@ -88,6 +88,13 @@ const styles = (theme) => ({
 			fontWeight: '600',
 			lineHeight: '2rem',
 		},
+		'& a': {
+			color: theme.palette.primary.main,
+			textDecoration: 'none',
+			'&:hover': {
+				textDecoration: 'underline',
+			},
+		},
 	},
 	infoDetailGrid: {
 		backgroundColor: '#F8F9FA',
