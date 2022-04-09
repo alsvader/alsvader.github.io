@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import {
 	Grid,
@@ -148,11 +149,13 @@ const Home = ({ classes }) => {
 							</Grid>
 							<Grid item xs={12} sm={12} md={8} lg={9}>
 								<p>
-									Obviously I'm a Web Designer. Web Developer with over 3 years
-									of experience. Experienced with all stages of the development
-									cycle for dynamic web projects. The as opposed to using
-									'Content here, content here', making it look like readable
-									English.
+									{t('home.personalDescription')}
+									<Link to="/blog">blog.</Link>
+								</p>
+								<p>
+									{t('home.personalDescriptionTwo')}
+									<Link to="#contact">{t('home.sendMessage')}</Link>
+									{t('home.personalDescriptionThree')}
 								</p>
 							</Grid>
 						</Grid>
