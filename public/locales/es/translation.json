@@ -45,7 +45,7 @@
 		"inputLabelMessage": "Mensaje",
 		"inputMessageHelperText": "Favor de especificar su mensaje",
 		"getBackText": "Me pondré en contacto con usted en 1-2 días hábiles.",
-		"formError": "Por favor complete el formulario e intente de nuevo.",
+		"formError": "Lo siento, tengo problemas para entregar tu mensaje, ¡inténtalo de nuevo!",
 		"formSuccess": "¡Gracias por su mensaje!.",
 		"location": "Ubicación",
 		"villahermosa": "Villahermosa, Tabasco. México",

@@ -14,8 +14,18 @@ const BREAKPOINTS = {
 
 const BLOG_API = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
+const FORM_CARRY_API = process.env.REACT_APP_FORM_CARRY_API;
+
 const MEDIA_URI = `${BLOG_API}/media/`;
 
-const constants = { BREAKPOINTS, BLOG_API, MEDIA_URI };
+const RECAPTCHA_SITEKEY = process.env.REACT_APP_RECAPTCHA_SITEKEY || '';
+
+const constants = {
+	BREAKPOINTS,
+	BLOG_API,
+	MEDIA_URI,
+	FORM_CARRY_API,
+	RECAPTCHA_SITEKEY,
+};
 
 export default constants;

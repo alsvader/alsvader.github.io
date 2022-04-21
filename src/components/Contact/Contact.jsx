@@ -6,6 +6,7 @@ import { Grid, TextField, Button, Snackbar } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import { withStyles } from '@material-ui/core/styles';
 import ContactImage from '../../assets/images/contact.jpg';
+import { constants } from '../../utils/constants';
 import styles from './styles';
 
 export const Contact = ({ classes }) => {
@@ -15,6 +16,7 @@ export const Contact = ({ classes }) => {
 		message: { value: '', error: false },
 	});
 	const [showMessage, setShowMessage] = useState(false);
+	const [errorForm, setErrorForm] = useState(false);
 	const [isRobot, setisRobot] = useState(true);
 	const captcha = useRef(null);
 	const [t] = useTranslation();
@@ -39,6 +41,39 @@ export const Contact = ({ classes }) => {
 			.some((item) => item);
 	};
 
+	const resetForm = (error = false) => {
+		setInputs({
+			name: { value: '', error: false },
+			email: { value: '', error: false },
+			message: { value: '', error: false },
+		});
+		setShowMessage(true);
+		setErrorForm(error);
+	};
+
+	const sendFormToEmail = async (emailData) => {
+		try {
+			console.log(emailData);
+			const response = await fetch(constants.FORM_CARRY_API, {
+				method: 'POST',
+				body: emailData,
+				headers: {
+					Accept: 'application/json',
+				},
+			});
+
+			const { status } = await response.json();
+
+			if (status === 'success') {
+				resetForm();
+			} else {
+				resetForm(true);
+			}
+		} catch (error) {
+			resetForm(true);
+		}
+	};
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
@@ -47,15 +82,12 @@ export const Contact = ({ classes }) => {
 
 			const data = {
 				captcha: captcha.current.getValue(),
-				name: name.value,
-				email: email.value,
-				message: message.value,
 			};
 
 			captcha.current.reset();
 
 			const response = await fetch(
-				'http://localhost:5000/captchaVerification',
+				`${constants.BLOG_API}/captchaVerification`,
 				{
 					method: 'POST',
 					mode: 'cors',
@@ -63,21 +95,23 @@ export const Contact = ({ classes }) => {
 					headers: {
 						'Content-Type': 'application/json',
 					},
-				}
+				},
 			);
 
 			const { success } = await response.json();
 
 			if (success) {
-				setInputs({
-					name: { value: '', error: false },
-					email: { value: '', error: false },
-					message: { value: '', error: false },
-				});
-				setShowMessage(true);
+				const formData = new FormData();
+				formData.append('name', name.value);
+				formData.append('email', email.value);
+				formData.append('message', message.value);
+				sendFormToEmail(formData);
+				return;
 			}
+
+			resetForm(true);
 		} catch (error) {
-			console.log(error);
+			resetForm(true);
 		}
 	};
 
@@ -147,19 +181,19 @@ export const Contact = ({ classes }) => {
 							onClose={closeMessage}
 						>
 							<Alert
-								severity="success"
+								severity={errorForm ? 'error' : 'success'}
 								elevation={6}
 								variant="filled"
 								className={classes.alert}
 							>
-								{t('home.formSuccess')}
+								{errorForm ? t('home.formError') : t('home.formSuccess')}
 							</Alert>
 						</Snackbar>
 					)}
 					<div className={classes.recaptcha}>
 						<ReCAPTCHA
 							ref={captcha}
-							sitekey="6LeCkRkeAAAAAF4MjYHVZvZXn8q6ubw2zw94NBTZ"
+							sitekey={constants.RECAPTCHA_SITEKEY}
 							onChange={onRecaptchaChange}
 						/>
 					</div>
