@@ -1,0 +1,19 @@
+# binaries
+bin/
+dist/
+lib/
+
+# editors
+*.swp
+.idea/
+.vs/
+.vscode/
+.DS_Store
+
+node_modules/
+  .DS_Store
+dist/
+build/
+
+# env files
+.env
