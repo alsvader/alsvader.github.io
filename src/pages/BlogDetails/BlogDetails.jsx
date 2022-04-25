@@ -13,7 +13,7 @@ import { CopyButton, PageLoader } from '../../components';
 import NotFound from '../404/NotFound';
 import { constants, dates } from '../../utils/constants';
 import { scrollToTop } from '../../utils/scroll';
-import Profile from '../../assets/images/profile.jpg';
+import Profile from '../../assets/images/profile.webp';
 import styles from './styles';
 
 const BlogDetails = ({ classes }) => {

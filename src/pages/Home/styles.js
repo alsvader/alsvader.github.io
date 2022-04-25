@@ -1,4 +1,4 @@
-import bgHome from '../../assets/images/bg_home3.jpg';
+import bgHome from '../../assets/images/bg_home3.webp';
 
 const styles = (theme) => ({
 	root: {

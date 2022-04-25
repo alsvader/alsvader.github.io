@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import NotFoundImage from '../../assets/images/not_found.jpg';
+import NotFoundImage from '../../assets/images/not_found.webp';
 import styles from './styles';
 
 const NotFound = ({ classes, redirect, label }) => {

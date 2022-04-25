@@ -5,7 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { Grid, TextField, Button, Snackbar } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import { withStyles } from '@material-ui/core/styles';
-import ContactImage from '../../assets/images/contact.jpg';
+import ContactImage from '../../assets/images/contact.webp';
 import { constants } from '../../utils/constants';
 import styles from './styles';
 

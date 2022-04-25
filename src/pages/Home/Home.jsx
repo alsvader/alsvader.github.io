@@ -26,7 +26,7 @@ import {
 } from '@material-ui/icons';
 import { useLocation } from 'react-router-dom';
 import { Portfolio, RecentBlog, Contact } from '../../components';
-import ProfileImage from '../../assets/images/profile.jpg';
+import ProfileImage from '../../assets/images/profile.webp';
 import styles from './styles';
 
 const Home = ({ classes }) => {
