@@ -20,9 +20,6 @@ const styles = (theme) => ({
 			fontSize: '2.3rem',
 			lineHeight: 1.2,
 		},
-		'& h2 > span': {
-			color: theme.palette.primary.main,
-		},
 		[theme.breakpoints.up('tablet')]: {
 			height: '80vh',
 		},
