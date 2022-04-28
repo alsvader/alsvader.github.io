@@ -26,6 +26,8 @@
 		"services": "Servicios",
 		"webDevTitle": "Desarrollo Web",
 		"webDevDescr": "Desarrollo de aplicaciones web a la medida de tus necesidades.",
+		"backendTitle": "Desarrollo Backend",
+		"backendDescr": "Servicios backend (api, microservicios) adaptados a las necesidades de tu negocio.",
 		"appDevTitle": "Desarrollo de Apps",
 		"appDevDescr": "Desarrollo de aplicaciones móviles para dispositivos Android y iOS.",
 		"desktopDevTitle": "Aplicaciones de escritorio",

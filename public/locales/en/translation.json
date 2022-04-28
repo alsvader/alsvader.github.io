@@ -26,6 +26,8 @@
 		"services": "Services",
 		"webDevTitle": "Web Development",
 		"webDevDescr": "Customized web app development services.",
+		"backendTitle": "Backend Development",
+		"backendDescr": "Backend services (api, microservices) adapted to your business needs.",
 		"appDevTitle": "Mobile App Development",
 		"appDevDescr": "Cross-Platform app development for Android and iOS.",
 		"desktopDevTitle": "Desktop application",

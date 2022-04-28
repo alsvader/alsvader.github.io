@@ -133,11 +133,19 @@ const styles = (theme) => ({
 		'& .MuiCardContent-root': {
 			height: '220px',
 		},
+		'& div.MuiGrid-item div.MuiPaper-rounded': {
+			minHeight: '230px',
+		},
 	},
 	cardService: {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
+		justifyContent: 'center',
+		padding: '24px 16px',
+		'&:last-child': {
+			paddingBottom: '0px',
+		},
 	},
 	portfolioContainer: {
 		background: '#FFFFFF',
