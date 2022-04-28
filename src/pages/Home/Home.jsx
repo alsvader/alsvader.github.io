@@ -23,6 +23,7 @@ import {
 	DesktopMac,
 	PhoneIphone,
 	Language,
+	Business,
 } from '@material-ui/icons';
 import { useLocation } from 'react-router-dom';
 import { Portfolio, RecentBlog, Contact } from '../../components';
@@ -83,6 +84,11 @@ const Home = ({ classes }) => {
 		}
 	};
 
+	const hireMe = () => {
+		scrollView(contactTarget);
+		window.history.pushState(null, '', '#contact');
+	};
+
 	return (
 		<Grid container className={classes.root} spacing={0}>
 			<Grid item xs={12} className={classes.homeGrid} ref={homeTarget}>
@@ -101,6 +107,7 @@ const Home = ({ classes }) => {
 						variant="contained"
 						color="primary"
 						className={classes.callToActionButton}
+						onClick={hireMe}
 					>
 						{t('home.hireMe')}
 					</Button>
@@ -173,7 +180,7 @@ const Home = ({ classes }) => {
 					<Grid item xs={12}>
 						<h2>{t('home.services')}</h2>
 					</Grid>
-					<Grid item xs={12} sm={6} md={4}>
+					<Grid item xs={12} sm={6} md={3}>
 						<Card>
 							<CardContent className={classes.cardService}>
 								<Language fontSize="large" color="primary" />
@@ -182,7 +189,16 @@ const Home = ({ classes }) => {
 							</CardContent>
 						</Card>
 					</Grid>
-					<Grid item xs={12} sm={6} md={4}>
+					<Grid item xs={12} sm={6} md={3}>
+						<Card>
+							<CardContent className={classes.cardService}>
+								<Business fontSize="large" color="primary" />
+								<h3>{t('home.backendTitle')}</h3>
+								<p>{t('home.backendDescr')}</p>
+							</CardContent>
+						</Card>
+					</Grid>
+					<Grid item xs={12} sm={6} md={3}>
 						<Card>
 							<CardContent className={classes.cardService}>
 								<PhoneIphone fontSize="large" color="primary" />
@@ -191,7 +207,7 @@ const Home = ({ classes }) => {
 							</CardContent>
 						</Card>
 					</Grid>
-					<Grid item xs={12} sm={6} md={4}>
+					<Grid item xs={12} sm={6} md={3}>
 						<Card>
 							<CardContent className={classes.cardService}>
 								<DesktopMac fontSize="large" color="primary" />

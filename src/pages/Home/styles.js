@@ -20,9 +20,6 @@ const styles = (theme) => ({
 			fontSize: '2.3rem',
 			lineHeight: 1.2,
 		},
-		'& h2 > span': {
-			color: theme.palette.primary.main,
-		},
 		[theme.breakpoints.up('tablet')]: {
 			height: '80vh',
 		},
@@ -136,11 +133,19 @@ const styles = (theme) => ({
 		'& .MuiCardContent-root': {
 			height: '220px',
 		},
+		'& div.MuiGrid-item div.MuiPaper-rounded': {
+			minHeight: '230px',
+		},
 	},
 	cardService: {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
+		justifyContent: 'center',
+		padding: '24px 16px',
+		'&:last-child': {
+			paddingBottom: '0px',
+		},
 	},
 	portfolioContainer: {
 		background: '#FFFFFF',
