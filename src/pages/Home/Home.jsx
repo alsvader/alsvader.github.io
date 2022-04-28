@@ -84,6 +84,11 @@ const Home = ({ classes }) => {
 		}
 	};
 
+	const hireMe = () => {
+		scrollView(contactTarget);
+		window.history.pushState(null, '', '#contact');
+	};
+
 	return (
 		<Grid container className={classes.root} spacing={0}>
 			<Grid item xs={12} className={classes.homeGrid} ref={homeTarget}>
@@ -102,6 +107,7 @@ const Home = ({ classes }) => {
 						variant="contained"
 						color="primary"
 						className={classes.callToActionButton}
+						onClick={hireMe}
 					>
 						{t('home.hireMe')}
 					</Button>
