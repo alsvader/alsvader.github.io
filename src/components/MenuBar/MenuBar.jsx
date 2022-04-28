@@ -59,7 +59,7 @@ const MenuBar = ({
 
 	return (
 		<div className={classes.root}>
-			<AppBar position="sticky">
+			<AppBar position="fixed">
 				<Toolbar classes={{ root: rootClasses.container }}>
 					{!showMenuIcon && (
 						<IconButton
@@ -153,5 +153,5 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	mapDispatchToProps,
 )(withStyles(styles)(MenuBar));

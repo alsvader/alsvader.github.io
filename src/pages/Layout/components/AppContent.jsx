@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Grid } from '@material-ui/core';
+import { Grid, Toolbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { MenuBar, DrawerMenu, Footer } from '../../../components';
 import NotFound from '../../404/NotFound';
@@ -13,6 +13,7 @@ const AppContent = ({ classes }) => {
 			<Router>
 				<MenuBar />
 				<DrawerMenu />
+				<Toolbar />
 				<Switch>
 					{ROUTES.map((item, index) => (
 						<Route

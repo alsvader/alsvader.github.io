@@ -1,7 +1,7 @@
 const OPTIONS = [
 	{
 		label: 'menu.home',
-		to: { pathname: '/', hash: '', state: { isCrollable: true } },
+		to: { pathname: '/', hash: '' },
 		icon: 'Home',
 	},
 	{
