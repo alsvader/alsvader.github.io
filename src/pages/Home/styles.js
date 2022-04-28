@@ -5,6 +5,7 @@ const styles = (theme) => ({
 		flexGrow: 1,
 		height: '100%',
 		width: '100%',
+		...theme.mixins.toolbar,
 	},
 	homeGrid: {
 		backgroundImage: `url(${bgHome})`,

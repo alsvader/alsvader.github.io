@@ -41,18 +41,17 @@ const Home = ({ classes }) => {
 	const scrollView = (target) => {
 		if (target && target.current !== null) {
 			setTimeout(() => {
-				target.current.scrollIntoView({ behavior: 'smooth' });
+				target.current.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 			}, 500);
 		}
 	};
 
 	useEffect(() => {
-		const { hash, state } = location;
+		const { hash } = location;
 
 		switch (hash) {
 			case '':
-				const target = state?.isCrollable ? homeTarget : null;
-				scrollView(target);
+				window.scrollTo({ top: 0, behavior: 'smooth' });
 				break;
 			case '#services':
 				scrollView(servicesTarget);
