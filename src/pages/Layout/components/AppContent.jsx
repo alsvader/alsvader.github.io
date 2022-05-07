@@ -4,10 +4,13 @@ import { Grid, Toolbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { MenuBar, DrawerMenu, Footer } from '../../../components';
 import NotFound from '../../404/NotFound';
+import useGATracker from '../../../hooks/useGATracker';
 import { ROUTES } from '../../../utils/constants';
 import styles from '../../Home/styles';
 
 const AppContent = ({ classes }) => {
+	useGATracker();
+
 	return (
 		<>
 			<Router>
