@@ -20,12 +20,16 @@ const MEDIA_URI = `${BLOG_API}/media/`;
 
 const RECAPTCHA_SITEKEY = process.env.REACT_APP_RECAPTCHA_SITEKEY || '';
 
+const GOOGLE_ANALYTICS_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID || '';
+
 const constants = {
 	BREAKPOINTS,
 	BLOG_API,
 	MEDIA_URI,
 	FORM_CARRY_API,
 	RECAPTCHA_SITEKEY,
+	GOOGLE_ANALYTICS_ID,
+	TEST_MODE: process.env.NODE_ENV === 'development',
 };
 
 export default constants;
