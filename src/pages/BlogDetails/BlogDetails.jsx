@@ -9,7 +9,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { withStyles } from '@material-ui/core/styles';
 import { Giscus } from '@giscus/react';
-import { CopyButton, PageLoader } from '../../components';
+import { CopyButton, PageLoader, SEO } from '../../components';
 import NotFound from '../404/NotFound';
 import { constants, dates } from '../../utils/constants';
 import { scrollToTop } from '../../utils/scroll';
@@ -59,93 +59,103 @@ const BlogDetails = ({ classes }) => {
 	} = post;
 
 	return (
-		<main className={classes.container}>
-			<article>
-				<div className="header">
-					<img
-						src={`${constants.MEDIA_URI}${imageCover}`}
-						alt="intro to react js"
-						loading="lazy"
-					/>
-					<div className="meta">
-						<div>
-							<Avatar
-								src={Profile}
-								alt="Aaron Lopez Sosa"
-								className={classes.avatarLarge}
-							/>
-						</div>
-						<div className="metaIconsContainer">
-							<span>
-								{`${t('blog.postedOn')} ${dates.toLocalDate(
-									published,
-									languageCode,
-								)}`}
-							</span>
-							<span>
-								{`${(post.body.split(' ').length / 155).toFixed(0)} ${t(
-									'blog.timeToRead',
-								)}`}
-							</span>
-						</div>
-					</div>
-					<h1>{post.attributes.title}</h1>
-				</div>
-				<div className="content">
-					{post && (
-						<ReactMarkdown
-							children={post.body}
-							components={{
-								img: ({ node, ...props }) => {
-									const { alt, src, title } = props;
-									return (
-										<img
-											src={`${constants.MEDIA_URI}${src}`}
-											alt={alt}
-											title={title}
-											loading="lazy"
-										/>
-									);
-								},
-								code: ({ node, inline, className, children, ...props }) => {
-									const match = /language-(\w+)/.exec(className || '');
-									return !inline && match ? (
-										<>
-											<CopyButton data={children[0]} />
-											<SyntaxHighlighter
-												children={String(children).replace(/\n$/, '')}
-												style={a11yDark}
-												language={match[1]}
-												PreTag="div"
-												{...props}
-											/>
-										</>
-									) : (
-										<code className={className} {...props}>
-											{children}
-										</code>
-									);
-								},
-							}}
+		<>
+			<SEO
+				title={post.attributes.title}
+				description={post.attributes.description}
+				url={`${constants.APP_WEBSITE_URL}${post.attributes.slug}`}
+				type="article"
+				image={`${constants.MEDIA_URI}${imageCover}`}
+				imageAlt={post.attributes.title}
+			/>
+			<main className={classes.container}>
+				<article>
+					<div className="header">
+						<img
+							src={`${constants.MEDIA_URI}${imageCover}`}
+							alt="intro to react js"
+							loading="lazy"
 						/>
-					)}
-				</div>
-				<div className="comments">
-					<Giscus
-						repo={REACT_APP_GISCUS_REPO}
-						repoId={REACT_APP_GISCUS_REPO_ID}
-						category={REACT_APP_GISCUS_CATEGORY}
-						categoryId={REACT_APP_GISCUS_CATEGORY_ID}
-						mapping="pathname"
-						reactionsEnabled="1"
-						emitMetadata="0"
-						theme="light"
-						lang={languageCode || 'en'}
-						term="intro-to-react"
-					/>
-				</div>
-			</article>
-		</main>
+						<div className="meta">
+							<div>
+								<Avatar
+									src={Profile}
+									alt="Aaron Lopez Sosa"
+									className={classes.avatarLarge}
+								/>
+							</div>
+							<div className="metaIconsContainer">
+								<span>
+									{`${t('blog.postedOn')} ${dates.toLocalDate(
+										published,
+										languageCode,
+									)}`}
+								</span>
+								<span>
+									{`${(post.body.split(' ').length / 155).toFixed(0)} ${t(
+										'blog.timeToRead',
+									)}`}
+								</span>
+							</div>
+						</div>
+						<h1>{post.attributes.title}</h1>
+					</div>
+					<div className="content">
+						{post && (
+							<ReactMarkdown
+								children={post.body}
+								components={{
+									img: ({ node, ...props }) => {
+										const { alt, src, title } = props;
+										return (
+											<img
+												src={`${constants.MEDIA_URI}${src}`}
+												alt={alt}
+												title={title}
+												loading="lazy"
+											/>
+										);
+									},
+									code: ({ node, inline, className, children, ...props }) => {
+										const match = /language-(\w+)/.exec(className || '');
+										return !inline && match ? (
+											<>
+												<CopyButton data={children[0]} />
+												<SyntaxHighlighter
+													children={String(children).replace(/\n$/, '')}
+													style={a11yDark}
+													language={match[1]}
+													PreTag="div"
+													{...props}
+												/>
+											</>
+										) : (
+											<code className={className} {...props}>
+												{children}
+											</code>
+										);
+									},
+								}}
+							/>
+						)}
+					</div>
+					<div className="comments">
+						<Giscus
+							repo={REACT_APP_GISCUS_REPO}
+							repoId={REACT_APP_GISCUS_REPO_ID}
+							category={REACT_APP_GISCUS_CATEGORY}
+							categoryId={REACT_APP_GISCUS_CATEGORY_ID}
+							mapping="pathname"
+							reactionsEnabled="1"
+							emitMetadata="0"
+							theme="light"
+							lang={languageCode || 'en'}
+							term="intro-to-react"
+						/>
+					</div>
+				</article>
+			</main>
+		</>
 	);
 };
 

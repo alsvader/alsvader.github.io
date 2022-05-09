@@ -15,7 +15,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import SearchIcon from '@material-ui/icons/Search';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles, useTheme } from '@material-ui/core/styles';
-import { BlogCard } from '../../components';
+import { BlogCard, SEO } from '../../components';
 import {
 	searchArticles,
 	searchByTags,
@@ -23,6 +23,7 @@ import {
 import { ARTICLES_ACTIONS } from '../../redux/actions';
 import { scrollToTop } from '../../utils/scroll';
 import styles from './styles';
+import { constants } from '../../utils/constants';
 
 const Blog = ({ classes }) => {
 	const { posts, articleTags, noDataFound, termSearch } = useSelector(
@@ -125,66 +126,76 @@ const Blog = ({ classes }) => {
 	};
 
 	return (
-		<main className={classes.container}>
-			<nav>
-				<ul>
-					<li>{t('blog.blog')}</li>
-					<li>/</li>
-					<li>{t('blog.searchResults')}</li>
-				</ul>
-			</nav>
-			<div className={classes.searchBarContainer}>
-				<Paper elevation={3}>
-					<form onSubmit={handleSubmit}>
-						<IconButton aria-label="search" color="primary">
-							<SearchIcon />
-						</IconButton>
-						<input
-							type="text"
-							placeholder={t('blog.searchPlaceholder')}
-							onChange={(e) => setTerm(e.target.value)}
+		<>
+			<SEO
+				title="Artículos y Tutoriales"
+				description="Aquí encontrarás los artículos y tutoriales que he escrito. Me gusta compartir todo lo que aprendo en el día a día en mi trabajo y tiempos libres"
+				url={`${constants.APP_WEBSITE_URL}blog`}
+				type="article"
+			/>
+			<main className={classes.container}>
+				<nav>
+					<ul>
+						<li>{t('blog.blog')}</li>
+						<li>/</li>
+						<li>{t('blog.searchResults')}</li>
+					</ul>
+				</nav>
+				<div className={classes.searchBarContainer}>
+					<Paper elevation={3}>
+						<form onSubmit={handleSubmit}>
+							<IconButton aria-label="search" color="primary">
+								<SearchIcon />
+							</IconButton>
+							<input
+								type="text"
+								placeholder={t('blog.searchPlaceholder')}
+								onChange={(e) => setTerm(e.target.value)}
+							/>
+							{termSearch && (
+								<h6>
+									{posts.length}{' '}
+									{posts.length > 1 ? t('blog.results') : t('blog.result')}
+								</h6>
+							)}
+							{matches && (
+								<Button
+									type="submit"
+									variant="contained"
+									color="primary"
+									size="large"
+								>
+									{t('blog.search')}
+								</Button>
+							)}
+						</form>
+					</Paper>
+					{!matches && (
+						<Button
+							id="mobileButton"
+							variant="contained"
+							color="primary"
+							size="large"
+						>
+							{t('blog.search')}
+						</Button>
+					)}
+				</div>
+				<div className={classes.chipContainer}>
+					{articleTags.map((articleTag) => (
+						<Chip
+							key={articleTag}
+							label={articleTag}
+							color={tags.includes(articleTag) ? 'primary' : 'default'}
+							onClick={() => addOrRemoveTag(articleTag)}
 						/>
-						{termSearch && (
-							<h6>
-								{posts.length}{' '}
-								{posts.length > 1 ? t('blog.results') : t('blog.result')}
-							</h6>
-						)}
-						{matches && (
-							<Button
-								type="submit"
-								variant="contained"
-								color="primary"
-								size="large"
-							>
-								{t('blog.search')}
-							</Button>
-						)}
-					</form>
-				</Paper>
-				{!matches && (
-					<Button
-						id="mobileButton"
-						variant="contained"
-						color="primary"
-						size="large"
-					>
-						{t('blog.search')}
-					</Button>
-				)}
-			</div>
-			<div className={classes.chipContainer}>
-				{articleTags.map((articleTag) => (
-					<Chip
-						key={articleTag}
-						label={articleTag}
-						color={tags.includes(articleTag) ? 'primary' : 'default'}
-						onClick={() => addOrRemoveTag(articleTag)}
-					/>
-				))}
-			</div>
-			<section className={classes.articlesContainer}>{printContent()}</section>
-		</main>
+					))}
+				</div>
+				<section className={classes.articlesContainer}>
+					{printContent()}
+				</section>
+			</main>
+		</>
 	);
 };
 
