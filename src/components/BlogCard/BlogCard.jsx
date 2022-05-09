@@ -41,7 +41,7 @@ export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 							color="primary"
 							size="medium"
 							href={`https://www.facebook.com/sharer.php?u=${encodeURIComponent(
-								constants.BLOG_API + '/' + slug,
+								constants.APP_WEBSITE_URL + slug,
 							)}&display=popup`}
 							target="_blank"
 						>
@@ -51,7 +51,7 @@ export const BlogCard = ({ classes, attributes, languageCode = 'en' }) => {
 							color="primary"
 							size="medium"
 							href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-								constants.BLOG_API + '/' + slug,
+								constants.APP_WEBSITE_URL + slug,
 							)}&via=als_link`}
 							target="_blank"
 						>
