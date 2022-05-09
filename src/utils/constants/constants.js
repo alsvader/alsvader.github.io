@@ -30,6 +30,7 @@ const constants = {
 	RECAPTCHA_SITEKEY,
 	GOOGLE_ANALYTICS_ID,
 	TEST_MODE: process.env.NODE_ENV === 'development',
+	APP_WEBSITE_URL: process.env.REACT_APP_WEBSITE_URL,
 };
 
 export default constants;
