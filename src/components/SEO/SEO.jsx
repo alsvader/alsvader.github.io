@@ -53,7 +53,13 @@ SEO.defaultProps = {
 };
 
 SEO.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
+	description: PropTypes.string,
+	url: PropTypes.string,
+	type: PropTypes.string,
+	image: PropTypes.string,
+	imageAlt: PropTypes.string,
+	twitterUser: PropTypes.string,
 };
 
 export default SEO;
