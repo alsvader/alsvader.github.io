@@ -53,7 +53,7 @@ export const Contact = ({ classes }) => {
 
 	const sendFormToEmail = async (emailData) => {
 		try {
-			console.log(emailData);
+			// console.log(emailData);
 			const response = await fetch(constants.FORM_CARRY_API, {
 				method: 'POST',
 				body: emailData,

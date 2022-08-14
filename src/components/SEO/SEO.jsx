@@ -44,7 +44,7 @@ const SEO = ({
 SEO.defaultProps = {
 	title: 'Aaron Lopez Sosa | Web & Mobile developer',
 	description:
-		'Hola, soy un desarrollador de software viviendo en México. Apasionado por la construcción de productos utilizando React JS/React Native y Node JS. Yeah! I ❤️ JavaScript. Igual me gusta compartir mis ideas, pensamientos y todo lo que he aprendido al realizar mi trabajo.',
+		'Hola, soy un desarrollador de software viviendo en México. Apasionado por el desarrollo de productos utilizando React JS/React Native y Node JS. Yeah! I ❤️ JavaScript. Igual me gusta compartir mis ideas, pensamientos y todo lo que he aprendido al realizar mi trabajo.',
 	url: constants.APP_WEBSITE_URL,
 	type: 'website',
 	image: `${constants.MEDIA_URI}profile.webp`,
@@ -53,7 +53,13 @@ SEO.defaultProps = {
 };
 
 SEO.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
+	description: PropTypes.string,
+	url: PropTypes.string,
+	type: PropTypes.string,
+	image: PropTypes.string,
+	imageAlt: PropTypes.string,
+	twitterUser: PropTypes.string,
 };
 
 export default SEO;
