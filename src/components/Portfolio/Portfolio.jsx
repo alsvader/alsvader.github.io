@@ -51,8 +51,8 @@ const Portfolio = ({ classes }) => {
 				navigation={false}
 				spaceBetween={20}
 				slidesPerView={1}
-				onSlideChange={() => console.log('slide change')}
-				onSwiper={(swiper) => console.log(swiper)}
+				// onSlideChange={() => console.log('slide change')}
+				// onSwiper={(swiper) => console.log(swiper)}
 				className={classes.swiperContainer}
 				breakpoints={{
 					960: {

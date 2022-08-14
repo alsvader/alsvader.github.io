@@ -79,7 +79,7 @@ const Home = ({ classes }) => {
 			a.setAttribute('download', 'aaronlopezsosa.pdf');
 			a.click();
 		} catch (error) {
-			console.log(error);
+			// console.log(error);
 		}
 	};
 

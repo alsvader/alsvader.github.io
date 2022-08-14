@@ -75,6 +75,8 @@ const BlogDetails = ({ classes }) => {
 							src={`${constants.MEDIA_URI}${imageCover}`}
 							alt="intro to react js"
 							loading="lazy"
+							width={288}
+							height={162}
 						/>
 						<div className="meta">
 							<div>
@@ -82,6 +84,8 @@ const BlogDetails = ({ classes }) => {
 									src={Profile}
 									alt="Aaron Lopez Sosa"
 									className={classes.avatarLarge}
+									width={48}
+									height={48}
 								/>
 							</div>
 							<div className="metaIconsContainer">

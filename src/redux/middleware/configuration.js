@@ -11,7 +11,7 @@ export const loadConfiguration = async (dispatch, getState) => {
 		}
 
 		const langKey = AVAILABLE_LANGUAGES.findIndex(
-			(lang) => lang.code === language
+			(lang) => lang.code === language,
 		);
 
 		localStorage.setItem('i18nextLng', language);
@@ -19,18 +19,18 @@ export const loadConfiguration = async (dispatch, getState) => {
 		dispatch(SYSTEM_ACTIONS.setLanguageCode(AVAILABLE_LANGUAGES[langKey].code));
 		dispatch(SYSTEM_ACTIONS.setLanguageMenuItemSelected(langKey));
 		dispatch(
-			SYSTEM_ACTIONS.setLanguageLabel(AVAILABLE_LANGUAGES[langKey].label)
+			SYSTEM_ACTIONS.setLanguageLabel(AVAILABLE_LANGUAGES[langKey].label),
 		);
 
 		const response = await fetch(
-			`${process.env.REACT_APP_API_BASE_URL}/articles`
+			`${process.env.REACT_APP_API_BASE_URL}/articles`,
 		);
 
 		const articles = await response.json();
 
 		articles.sort(
 			(a, b) =>
-				new Date(b.attributes.published) - new Date(a.attributes.published)
+				new Date(b.attributes.published) - new Date(a.attributes.published),
 		);
 
 		let tags = articles.map((article) => article.attributes.tag.toLowerCase());
@@ -39,7 +39,7 @@ export const loadConfiguration = async (dispatch, getState) => {
 		dispatch(ARTICLES_ACTIONS.setAllArticles(articles));
 		dispatch(ARTICLES_ACTIONS.setTags(tags));
 	} catch (error) {
-		console.log(error);
+		// console.log(error);
 	}
 };
 
@@ -59,7 +59,7 @@ export const searchArticles = (term) => (dispatch, getState) => {
 	}
 
 	const articlesFiltered = data.filter((article) =>
-		article.attributes.title.toLowerCase().includes(term.toLowerCase())
+		article.attributes.title.toLowerCase().includes(term.toLowerCase()),
 	);
 
 	dispatch(ARTICLES_ACTIONS.setArticles(articlesFiltered));
@@ -86,7 +86,7 @@ export const searchByTags = (tags) => (dispatch, getState) => {
 	tags = tags.map((tag) => tag.toLowerCase());
 
 	const articlesFiltered = data.filter((article) =>
-		tags.includes(article.attributes.tag.toLowerCase())
+		tags.includes(article.attributes.tag.toLowerCase()),
 	);
 
 	dispatch(ARTICLES_ACTIONS.setArticles(articlesFiltered));
