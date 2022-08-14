@@ -75,8 +75,6 @@ const BlogDetails = ({ classes }) => {
 							src={`${constants.MEDIA_URI}${imageCover}`}
 							alt="intro to react js"
 							loading="lazy"
-							width={288}
-							height={162}
 						/>
 						<div className="meta">
 							<div>
