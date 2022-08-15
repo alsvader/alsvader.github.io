@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from 'react-router-dom';
 import { Grid, Toolbar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { MenuBar, DrawerMenu, Footer } from '../../../components';
@@ -18,6 +23,10 @@ const AppContent = ({ classes }) => {
 				<DrawerMenu />
 				<Toolbar />
 				<Switch>
+					<Redirect
+						from="/:url*(/+)"
+						to={window.location.pathname.slice(0, -1)}
+					/>
 					{ROUTES.map((item, index) => (
 						<Route
 							key={index}

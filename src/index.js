@@ -17,9 +17,19 @@ import './utils/i18n';
 const rootElement = document.getElementById('root');
 
 if (rootElement.hasChildNodes()) {
-	hydrate(<App />, rootElement);
+	hydrate(
+		<Suspense fallback={<PageLoader />}>
+			<App />
+		</Suspense>,
+		rootElement,
+	);
 } else {
-	render(<App />, rootElement);
+	render(
+		<Suspense fallback={<PageLoader />}>
+			<App />
+		</Suspense>,
+		rootElement,
+	);
 }
 
 // If you want to start measuring performance in your app, pass a function
